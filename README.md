@@ -7,5 +7,4 @@ My config files...
 
 ```terminal
 git clone git://github.com/mdekauwe/dot_files ~/dot_files
-
 ```
