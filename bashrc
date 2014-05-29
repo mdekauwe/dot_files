@@ -25,16 +25,21 @@ export PATH=$PATH:/Users/mdekauwe/bin/bash:/Users/mdekauwe/bin/csh:/Users/mdekau
 export PATH=$PATH:/Users/mdekauwe/bin/python:.:/Users/mdekauwe/bin/x86_64
 export PATH=$PATH:/Users/mdekauwe/bin/perl
 export PATH=$PATH:/Applications:/Applications/Utilities:
-export PATH=$PATH:/sw/bin:/usr/local/texlive/2009/bin/universal-darwin
 
 export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.6/
 export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
 
+
 TEXMFHOME="/Users/mdekauwe/texmf"
 export TEXINPUTS=$TEXINPUTS:/Users/mdekauwe/latex_packages/prosper
 
+#
+## Aliases
+#
+
 #alias bash=/usr/local/bin/bash
 #unset noclobber
+alias sphx='/opt/local/bin/sphinx-quickstart-2.6'
 alias ls='ls -FC'
 alias lv='rm *.pyc && ls' # remove python pyc files and ls
 alias duf='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
@@ -72,13 +77,17 @@ alias dh='df -h'
 #alias aspell='aspell --mode=tex -c'
 alias xv='xv -2xlimit'
 alias home='cd ~'
-# Maintainence taks...
+
+#
+## Maintainence taks...
+#
 alias daily='sudo sh /etc/daily'
 alias weekly='sudo sh /etc/weekly'
 alias monthly='sudo sh /etc/monthly'
 
-# Opening Applications from the terminal...
-
+#
+## Opening Applications from the terminal...
+#
 alias ff='open -a firefox'
 #alias gimp 'open -a gimp'
 alias chess='open -a chess'
@@ -88,7 +97,10 @@ alias sol='open -a solitaire\ xl'
 alias cm='open -a Football\ Manager'
 alias preview='open -a preview'
 alias calc='open -a calculator'
-# for ssh to linux machines
+
+#
+## for ssh to linux machines
+#
 #alias sshc='ssh -X cherry.geog.ucl.ac.uk'
 #alias ssht='ssh -X terror.geog.ucl.ac.uk'
 #alias sshe='ssh -X erebus.geog.ucl.ac.uk'
@@ -105,7 +117,9 @@ alias sftpceh='sftp mgdk@wlremote.nwl.ac.uk'
 alias sshunsw='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
 alias sftpunsw='sftp z3497040@monsoon.ccrc.unsw.edu.au'
 
-#color in man pages http://icanhaz.com/colors
+#
+##color in man pages http://icanhaz.com/colors
+#
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
