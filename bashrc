@@ -116,6 +116,11 @@ alias sshceh='ssh -X mgdk@wlremote.nwl.ac.uk'
 alias sftpceh='sftp mgdk@wlremote.nwl.ac.uk'
 alias sshunsw='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
 alias sftpunsw='sftp z3497040@monsoon.ccrc.unsw.edu.au'
+alias sshraijin='ssh -X mgk576@raijin.nci.org.au'
+alias sftpraijin='sftp mgk576@raijin.nci.org.au'
+
+
+
 
 #
 ##color in man pages http://icanhaz.com/colors
