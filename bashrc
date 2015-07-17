@@ -2,8 +2,8 @@
 # Print a fortune cookie for interactive shells:
 if [[ $- = *i* ]]
 then
-    echo 
-    /opt/local/bin/fortune 
+    echo
+    /opt/local/bin/fortune
     echo
     #echo -ne "Hello $USER today is "; date
 fi
@@ -13,6 +13,7 @@ ARCH=$(uname -m)
 #export PROMPT_COMMAND='echo -n "]1;$PWD"'
 #PS1="\[\033[1;35m\]HAL 9000$\[\033[0m\] "
 
+# set prompt
 export TERM="xterm-color"
 alias ls="ls -G"
 PS1="\[\033[01;32m\]HAL 9000 \$\[\033[0m\] "
@@ -21,12 +22,13 @@ PS1="\[\033[01;32m\]HAL 9000 \$\[\033[0m\] "
 # Setup path...
 PATH=/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PATH=$PATH:/bin:/usr/local/bin:/usr/bin:/Users/mdekauwe/bin
-export PATH=$PATH:/Users/mdekauwe/bin/bash:/Users/mdekauwe/bin/csh:/Users/mdekauwe/bin/awk
+export PATH=$PATH:/Users/mdekauwe/bin/bash:/Users/mdekauwe/bin/csh
+export PATH=$PATH:/Users/mdekauwe/bin/awk
 export PATH=$PATH:/Users/mdekauwe/bin/python:.:/Users/mdekauwe/bin/x86_64
 export PATH=$PATH:/Users/mdekauwe/bin/perl
 export PATH=$PATH:/Applications:/Applications/Utilities:
 
-export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.6/
+export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/
 export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
 
 
@@ -55,8 +57,14 @@ alias r='rlogin'
 alias m='less -X'
 #alias m='more'
 alias n='nedit'
-alias t='edit'
-alias tn='edit --new-window'
+#alias t='edit'
+#alias tn='edit --new-window'
+#alias t='subl'
+#alias tn='subl --new-window'
+alias t='atom'
+alias tn='atom --new-window'
+alias s='subl'
+alias sn='subl --new-window'
 alias d='open -a /Applications/Preview.app'
 alias gp='gnuplot'
 alias rm='\rm'
@@ -101,23 +109,10 @@ alias calc='open -a calculator'
 #
 ## for ssh to linux machines
 #
-#alias sshc='ssh -X cherry.geog.ucl.ac.uk'
-#alias ssht='ssh -X terror.geog.ucl.ac.uk'
-#alias sshe='ssh -X erebus.geog.ucl.ac.uk'
-#alias sshv='ssh -X vesuvius.geog.ucl.ac.uk'
-# Stopped working this seems to work though ?!
-alias sshc='ssh -Y cherry.geog.ucl.ac.uk'
-alias ssht='ssh -Y terror.geog.ucl.ac.uk'
-alias sshe='ssh -Y erebus.geog.ucl.ac.uk'
-alias sshv='ssh -Y vesuvius.geog.ucl.ac.uk'
-alias sftpv='sftp vesuvius.geog.ucl.ac.uk'
-alias sshucl='ssh -X mdekauwe@lyon.geog.ucl.ac.uk'
-alias sshceh='ssh -X mgdk@wlremote.nwl.ac.uk'
-alias sftpceh='sftp mgdk@wlremote.nwl.ac.uk'
 alias sshunsw='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
 alias sftpunsw='sftp z3497040@monsoon.ccrc.unsw.edu.au'
-alias sshraijin='ssh -X mgk576@raijin.nci.org.au'
-alias sftpraijin='sftp mgk576@raijin.nci.org.au'
+alias sshnci='ssh -Y mgk576@raijin.nci.org.au'
+alias sftpnci='sftp mgk576@raijin.nci.org.au'
 
 #
 ##color in man pages http://icanhaz.com/colors
@@ -136,7 +131,7 @@ HISTCONTROL=ignoredups
 HISTCONTROL=ignoreboth
 
 # Expand the history size
-HISTFILESIZE=10000 
+HISTFILESIZE=10000
 HISTSIZE=100
 
 # commands with leading space do not get added to history
@@ -149,12 +144,12 @@ HISTCONTROL=ignorespace
 path()
 {
 	oldIFS=$IFS
-	IFS=:  
+	IFS=:
 	printf "%s\n" $PATH
    	IFS=$oldIFS
 }
 
-function extract( ) 
+function extract( )
 {
     if [ -f $1 ] ; then
         case $1 in
@@ -175,11 +170,11 @@ function extract( )
         echo "'$1' is not a valid file!"
     fi
 }
-  
 
-function spl( ) 
-{ 
-	echo $@ | ispell -a | sed -n -e '/^\&/p' -e '/^\#/p';   
+
+function spl( )
+{
+	echo $@ | ispell -a | sed -n -e '/^\&/p' -e '/^\#/p';
 }
 
 function here( )
@@ -220,5 +215,3 @@ LIGHTPURPLE='\e[1;35m'
 YELLOW='\e[1;33m'
 WHITE='\e[1;37m'
 NC='\e[0m'              # No Color
-
-
