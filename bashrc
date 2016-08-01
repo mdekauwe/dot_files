@@ -35,6 +35,8 @@ export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
 TEXMFHOME="/Users/mdekauwe/texmf"
 export TEXINPUTS=$TEXINPUTS:/Users/mdekauwe/latex_packages/prosper
 
+export SVN_EDITOR='atom --new-window'
+
 #
 ## Aliases
 #
@@ -57,12 +59,14 @@ alias r='rlogin'
 alias m='less -X'
 #alias m='more'
 alias n='nedit'
-#alias t='edit'
-#alias tn='edit --new-window'
+alias tw='edit'
+alias twn='edit --new-window'
 #alias t='subl'
 #alias tn='subl --new-window'
 alias t='atom'
 alias tn='atom --new-window'
+alias j="jupyter-notebook-3.5"
+alias jupyter="jupyter-notebook-3.5"
 alias s='subl'
 alias sn='subl --new-window'
 alias d='open -a /Applications/Preview.app'
