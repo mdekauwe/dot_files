@@ -39,6 +39,9 @@ export TEXINPUTS=$TEXINPUTS:/Users/mdekauwe/latex_packages/prosper
 
 export SVN_EDITOR='atom --new-window'
 
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
 #
 ## Aliases
 #
