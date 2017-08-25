@@ -5,5 +5,5 @@ What it says on the tin...
 ## use
 
 ```terminal
-blah
+./install_files.sh
 ```
