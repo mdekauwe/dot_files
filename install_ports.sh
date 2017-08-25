@@ -48,4 +48,4 @@ sudo port install exlive-fonts-extra
 sudo port install texlive-latex-recommended
 sudo port install texlive-math-science
 sudo port install texlive-publishers
-sudo port install exlive-xetex
+sudo port install texlive-xetex
