@@ -8,5 +8,15 @@ FDIR="spell"
 cp ~/.aspell.en.prepl $FDIR/aspell.en.prepl
 cp ~/.aspell.en.pws $FDIR/aspell.en.pws
 
+FDIR="atom"
+cp ~/.atom/config.cson $FDIR/.
+cp ~/.atom/github.cson $FDIR/.
+cp ~/.atom/kite-config.json $FDIR/.
+cp ~/.atom/snippets.cson $FDIR/.
+cp ~/.atom/init.coffee $FDIR/.
+cp ~/.atom/keymap.cson $FDIR/.
+cp ~/.atom/packages.list $FDIR/.
+cp ~/.atom/styles.less $FDIR/.
+
 FDIR="matplotlib"
-cp ~/.matplotlib/matplotlibrc $FDIR/matplotlibrc 
+cp ~/.matplotlib/matplotlibrc $FDIR/matplotlibrc
