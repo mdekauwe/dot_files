@@ -1,0 +1,93 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "f1ab2014-ccc4-4955-8819-de58c18cdf4d"
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+  "autocomplete-python":
+    useKite: false
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+  core:
+    disabledPackages: [
+      "close-after-last-tab"
+      "close-after-last-tab"
+      "close-after-last-tab"
+      "autocomplete-css"
+      "autocomplete-html"
+      "autocomplete-snippets"
+      "autocomplete-atom-api"
+      "autocomplete-plus"
+      "markdown-preview"
+      "language-gfm"
+      "markdown-preview-plus"
+      "git-plus"
+    ]
+    ignoredNames: [
+      "*.pyc"
+      "*.o"
+      "*.aux"
+      "*.log"
+      "*.out"
+      "*.pdf"
+      "*.bak"
+      "gday"
+      ".DS_Store"
+      ".localized"
+      ".Rapp.history"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+  editor:
+    autoIndentOnPaste: false
+    fontFamily: "Source Code Pro"
+    invisibles: {}
+    scrollPastEnd: true
+    scrollSensitivity: 20
+    softWrapAtPreferredLineLength: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "6284a944-6e52-01cd-f270-cc9e629698bf"
+  "git-plus":
+    general:
+      _analyticsUserId: "17ec5e8d-0642-4d53-8ef4-cc6c319e810c"
+  "markdown-preview-plus":
+    useGitHubStyle: true
+  minimap:
+    disablePythonDocLinks: true
+    plugins:
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+  "r-exec":
+    advancePosition: false
+    focusWindow: true
+    notifications: true
+    whichApp: "Terminal"
+  "spell-check": {}
+  "sync-settings":
+    _analyticsUserId: "10e762a6-7aef-4b87-a15b-206be091f4ec"
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
+".fortran.modern.source":
+  editor:
+    tabLength: 3
+".fortran.source":
+  editor:
+    tabLength: 3
+".latex":
+  editor:
+    preferredLineLength: 80
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+".latex.rd.tex.text":
+  editor:
+    tabLength: 2
+".r.source":
+  editor:
+    tabLength: 2
