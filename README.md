@@ -1,10 +1,9 @@
-# Martin De Kauwe's Dot Files
+# My dot files
 
-My config files... 
+What it says on the tin...
 
-## Installation
-
+## use
 
 ```terminal
-git clone git://github.com/mdekauwe/dot_files ~/dot_files
+blah
 ```
