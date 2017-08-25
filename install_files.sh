@@ -1,4 +1,6 @@
 #!/bin/bash
 
-cp bashrc ~/.bashrc
-cp bash_profile ~/.bash_profile
+FDIR="bash"
+
+cp $FDIR/bashrc ~/.bashrc
+cp $FDIR/bash_profile ~/.bash_profile
