@@ -18,4 +18,8 @@ cp $FDIR/keymap.cson ~/.atom/
 cp $FDIR/packages.list ~/.atom/
 cp $FDIR/styles.less ~/.atom/
 
+FDIR="matplotlib"
+mkdir -p ~/.matplotlib
+cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
+
 apm install --packages-file $FDIR/packages.list
