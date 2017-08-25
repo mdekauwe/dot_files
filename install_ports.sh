@@ -23,7 +23,7 @@ sudo port install $PY_VER-pymc3
 sudo port instsall $PY_VER-scikit-learn
 sudo port install $PY_VER-seaborn
 sudo port install $PY_VER-sphinx
-port select --set sphinx py36-sphinx
+sudo port select --set sphinx py36-sphinx
 sudo port install $PY_VER-statsmodels
 sudo port install $PY_VER-urllib3
 sudo port install $PY_VER-xarray
@@ -44,7 +44,7 @@ sudo port install gsl
 sudo port install $PY_VER-gsl
 sudo port install texlive-basic
 sudo port install texlive-bibtex-extra
-sudo port install exlive-fonts-extra
+sudo port install texlive-fonts-extra
 sudo port install texlive-latex-recommended
 sudo port install texlive-math-science
 sudo port install texlive-publishers
