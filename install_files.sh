@@ -25,8 +25,6 @@ then
 fi
 cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
 
-apm install --packages-file $FDIR/packages.list
-
 # Set up sybmolic links
 USER=$(whoami)
 D=journals
