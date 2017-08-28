@@ -19,11 +19,13 @@ cp $FDIR/packages.list ~/.atom/
 cp $FDIR/styles.less ~/.atom/
 
 FDIR="matplotlib"
-mkdir -p ~/.matplotlib
+if [ ! -d ".$FDIR" ]
+then
+    mkdir -p ~/.matplotlib
+fi
 cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
 
 apm install --packages-file $FDIR/packages.list
-
 
 # Set up sybmolic links
 USER=$(whoami)
