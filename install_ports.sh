@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# Get port list port -qv installed > myports.txt
+
 sudo port install gcc6 +gfortran
+sudo port install mpich
 sudo port select --set gcc mp-gcc6
+sudo port install mpich-gcc6
 sudo port install git
 sudo port install python36
 sudo port select --set python python36
@@ -29,6 +33,11 @@ sudo port install $PY_VER-urllib3
 sudo port install $PY_VER-xarray
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
+sudo port install $PY_VER-lmfit
+sudo port install $PY_VER-
+sudo port install $PY_VER-mpi4py
+sudo port install $PY_VER-
+sudo port install $PY_VER-
 sudo port select --set pip pip36
 sudo port install aspell
 sudo port install aspell-dict-en
@@ -50,3 +59,14 @@ sudo port install texlive-math-science
 sudo port install texlive-publishers
 sudo port install texlive-xetex
 sudo port install fondu
+sudo port install bash-completion
+sudo port install bzip2
+sudo port install dos2unix
+sudo port install fortune
+sudo port install gawk
+sudo port install gdm
+sudo port install gdbm
+sudo port install geos
+sudo port install ImageMagick
+sudo port install llvm
+sudo port install xorg
