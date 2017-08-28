@@ -23,3 +23,12 @@ mkdir -p ~/.matplotlib
 cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
 
 apm install --packages-file $FDIR/packages.list
+
+
+# Set up sybmolic links
+USER=$(whoami)
+D=journals
+if [ ! -d "$D" ]
+then
+    ln -s /Users/$USER/Dropbox/journals journals
+fi
