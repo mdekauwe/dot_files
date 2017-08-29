@@ -34,10 +34,8 @@ sudo port install $PY_VER-xarray
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
 sudo port install $PY_VER-lmfit
-sudo port install $PY_VER-
+sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-mpi4py
-sudo port install $PY_VER-
-sudo port install $PY_VER-
 sudo port select --set pip pip36
 sudo port install aspell
 sudo port install aspell-dict-en
