@@ -56,6 +56,7 @@ sudo port install texlive-latex-recommended
 sudo port install texlive-math-science
 sudo port install texlive-publishers
 sudo port install texlive-xetex
+sudo port install latexmk
 sudo port install fondu
 sudo port install bash-completion
 sudo port install bzip2
