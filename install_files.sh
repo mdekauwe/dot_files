@@ -29,6 +29,7 @@ then
 fi
 cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
 
+# http://gree2.github.io/python/2015/04/27/python-change-matplotlib-font-on-mac
 #mkdir ~/Desktop/font_copies
 #cp /System/Library/Fonts/Helvetica.dfont ~/Desktop/font_copies
 #cd Desktop/font_copies/
