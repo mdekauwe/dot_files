@@ -9,6 +9,10 @@ cp $FDIR/aspell.en.prepl ~/.aspell.en.prepl
 cp $FDIR/aspell.en.pws ~/.aspell.en.pws
 
 FDIR="atom"
+if [ ! -d ".$FDIR" ]
+then
+    mkdir -p ~/.atom
+fi
 cp $FDIR/config.cson ~/.atom/
 cp $FDIR/github.cson ~/.atom/
 cp $FDIR/kite-config.json ~/.atom/
