@@ -69,3 +69,4 @@ sudo port install geos
 sudo port install ImageMagick
 sudo port install llvm
 sudo port install xorg
+sudo port install latexdiff
