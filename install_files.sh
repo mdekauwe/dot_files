@@ -30,11 +30,14 @@ fi
 cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
 
 # http://gree2.github.io/python/2015/04/27/python-change-matplotlib-font-on-mac
+
+#$ python -c "import matplotlib; print(matplotlib.matplotlib_fname())"
+#/opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/matplotlib/mpl-data/matplotlibrc
+
 #mkdir ~/Desktop/font_copies
 #cp /System/Library/Fonts/Helvetica.dfont ~/Desktop/font_copies
 #cd Desktop/font_copies/
 #fondu -show ~/Desktop/font_copies/Helvetica.dfont
-
 #cd /opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/matplotlib/mpl-data/fonts/ttf
 #cp ~/Desktop/font_copies .
 #rm ~/.matplotlibrc/fontList.py3k.cache
