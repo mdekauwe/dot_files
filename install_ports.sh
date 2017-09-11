@@ -71,3 +71,4 @@ sudo port install ImageMagick
 sudo port install llvm
 sudo port install xorg
 sudo port install latexdiff
+sudo port install gsed
