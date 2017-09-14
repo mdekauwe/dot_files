@@ -122,7 +122,12 @@ alias calc='open -a calculator'
 #
 ## for ssh to linux machines
 #
-alias sshunsw='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
+# UNSW storm servers
+alias sshunsw1='ssh -Y z3497040@squall.ccrc.unsw.edu.au'
+alias sshunsw2='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
+alias sshunsw3='ssh -Y z3497040@blizzard.ccrc.unsw.edu.au'
+alias sshunsw4='ssh -Y z3497040@maelstrom.ccrc.unsw.edu.au'
+
 alias sftpunsw='sftp z3497040@monsoon.ccrc.unsw.edu.au'
 alias sshnci='ssh -Y mgk576@raijin.nci.org.au'
 alias sftpnci='sftp mgk576@raijin.nci.org.au'
