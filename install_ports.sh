@@ -72,3 +72,4 @@ sudo port install llvm
 sudo port install xorg
 sudo port install latexdiff
 sudo port install gsed
+sudo port install coreutils
