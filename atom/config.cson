@@ -80,6 +80,9 @@
 ".fortran.source":
   editor:
     tabLength: 3
+".text.plain":
+  "editor":
+    "softWrap": true
 ".latex":
   editor:
     preferredLineLength: 80
