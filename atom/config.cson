@@ -21,7 +21,6 @@
       "autocomplete-plus"
       "markdown-preview"
       "language-gfm"
-      "markdown-preview-plus"
       "git-plus"
     ]
     ignoredNames: [
@@ -40,14 +39,15 @@
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
-      "atom-material-syntax"
+      "newbound-dark-syntax"
     ]
   editor:
     autoIndentOnPaste: false
-    fontFamily: "Source Code Pro"
+    fontFamily: "Fira Mono"
     invisibles: {}
     scrollPastEnd: true
     scrollSensitivity: 20
+    softWrap: true
     softWrapAtPreferredLineLength: true
     tabLength: 4
   "exception-reporting":
@@ -55,6 +55,8 @@
   "git-plus":
     general:
       _analyticsUserId: "17ec5e8d-0642-4d53-8ef4-cc6c319e810c"
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview-plus":
     useGitHubStyle: true
   minimap:
@@ -80,9 +82,6 @@
 ".fortran.source":
   editor:
     tabLength: 3
-".text.plain":
-  "editor":
-    "softWrap": true
 ".latex":
   editor:
     preferredLineLength: 80
@@ -91,6 +90,9 @@
 ".latex.rd.tex.text":
   editor:
     tabLength: 2
+".plain.text":
+  editor:
+    softWrap: true
 ".r.source":
   editor:
     tabLength: 2
