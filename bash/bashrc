@@ -98,7 +98,7 @@ alias dh='df -h'
 #alias aspell='aspell --mode=tex -c'
 alias xv='xv -2xlimit'
 alias home='cd ~'
-
+alias openbugs='wine /Users/mdekauwe/.wine/drive_c/Program\ Files/OpenBUGS/OpenBUGS323/OpenBUGS.exe' 
 #
 ## Maintainence taks...
 #
