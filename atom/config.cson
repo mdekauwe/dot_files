@@ -47,7 +47,7 @@
     invisibles: {}
     scrollPastEnd: true
     scrollSensitivity: 20
-    softWrap: true
+    softWrap: false
     softWrapAtPreferredLineLength: true
     tabLength: 4
   "exception-reporting":
