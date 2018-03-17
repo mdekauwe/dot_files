@@ -44,6 +44,7 @@
   editor:
     autoIndentOnPaste: false
     fontFamily: "Fira Mono"
+    fontSize: 15
     invisibles: {}
     scrollPastEnd: true
     scrollSensitivity: 20

@@ -28,10 +28,11 @@ export PATH=$PATH:/Users/mdekauwe/bin/python:.:/Users/mdekauwe/bin/x86_64
 export PATH=$PATH:/Users/mdekauwe/bin/perl
 export PATH=$PATH:/Users/mdekauwe/Library/Haskell/bin
 export PATH=$PATH:/Applications:/Applications/Utilities:
+export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 
 export MANPATH=/opt/local/share/man:$MANPATH
 
-export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/
+export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/
 export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
 #export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/
 
@@ -98,7 +99,7 @@ alias dh='df -h'
 #alias aspell='aspell --mode=tex -c'
 alias xv='xv -2xlimit'
 alias home='cd ~'
-alias openbugs='wine /Users/mdekauwe/.wine/drive_c/Program\ Files/OpenBUGS/OpenBUGS323/OpenBUGS.exe' 
+alias openbugs='wine /Users/mdekauwe/.wine/drive_c/Program\ Files/OpenBUGS/OpenBUGS323/OpenBUGS.exe'
 #
 ## Maintainence taks...
 #
