@@ -21,6 +21,7 @@ cp $FDIR/init.coffee ~/.atom/
 cp $FDIR/keymap.cson ~/.atom/
 cp $FDIR/packages.list ~/.atom/
 cp $FDIR/styles.less ~/.atom/
+apm install --packages-file $FDIR/packages.list
 
 FDIR="matplotlib"
 if [ ! -d ".$FDIR" ]
