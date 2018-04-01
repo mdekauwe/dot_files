@@ -43,6 +43,7 @@ sudo port install aspell
 sudo port install aspell-dict-en
 sudo port install R
 sudo port install gnuplot
+sudo port install pygam
 sudo port install netcdf
 sudo port install netcdf-fortran
 pip install netCDF4
