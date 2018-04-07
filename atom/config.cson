@@ -38,8 +38,8 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "atom-dark-ui"
-      "ariake-dark-syntax"
+      "atom-material-ui"
+      "seti-syntax"
     ]
   editor:
     autoIndentOnPaste: false
