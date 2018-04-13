@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get port list port -qv installed > myports.txt
- sudo port selfupdate
+sudo port selfupdate
 
 sudo port install gcc6 +gfortran
 sudo port install mpich
