@@ -21,7 +21,6 @@
       "autocomplete-plus"
       "markdown-preview"
       "language-gfm"
-      "git-plus"
     ]
     ignoredNames: [
       "*.pyc"
@@ -38,8 +37,8 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "atom-material-ui"
-      "seti-syntax"
+      "atom-dark-ui"
+      "ariake-dark-syntax"
     ]
   editor:
     autoIndentOnPaste: false
