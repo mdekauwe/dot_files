@@ -33,8 +33,3 @@
 
 'body':
   'shift-ctrl-i': 'window:toggle-invisibles'
-
-'.github-Panel':
-    'cmd-shift-p': 'github:push'
-'.github-CommitView-editor atom-text-editor:not([mini])':
-    'cmd-shift-p': 'github:push'
