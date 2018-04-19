@@ -46,8 +46,8 @@ cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
 
 # Set up sybmolic links
 USER=$(whoami)
-D=journals
+D=/Users/$USER/journals
 if [ ! -d "$D" ]
 then
-    ln -s /Users/$USER/Dropbox/journals journals
+    ln -s /Users/$USER/Dropbox/journals /Users/$USER/journals
 fi
