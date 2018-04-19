@@ -35,10 +35,6 @@
   'shift-ctrl-i': 'window:toggle-invisibles'
 
 '.github-Panel':
-    'cmd-shift-up': 'github:push'
-    'cmd-shift-down': 'github:pull'
-    'cmd-shift-right': 'github:fetch'
+    'cmd-shift-p': 'github:push'
 '.github-CommitView-editor atom-text-editor:not([mini])':
-    'cmd-shift-up': 'github:push'
-    'cmd-shift-down': 'github:pull'
-    'cmd-shift-right': 'github:fetch'
+    'cmd-shift-p': 'github:push'
