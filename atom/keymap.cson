@@ -33,3 +33,12 @@
 
 'body':
   'shift-ctrl-i': 'window:toggle-invisibles'
+
+'.github-Panel':
+    'cmd-up': 'github:push'
+    'cmd-down': 'github:pull'
+    'cmd-right': 'github:fetch'
+'.github-CommitView-editor atom-text-editor:not([mini])':
+    'cmd-up': 'github:push'
+    'cmd-down': 'github:pull'
+    'cmd-right': 'github:fetch'
