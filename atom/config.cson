@@ -93,6 +93,9 @@
 ".plain.text":
   editor:
     softWrap: true
+".plain.gfm":
+  editor:
+    softWrap: true
 ".r.source":
   editor:
     tabLength: 2
