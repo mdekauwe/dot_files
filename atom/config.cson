@@ -82,6 +82,9 @@
 ".fortran.source":
   editor:
     tabLength: 3
+".gfm.plain":
+  editor:
+    softWrap: true
 ".latex":
   editor:
     preferredLineLength: 80
@@ -91,9 +94,6 @@
   editor:
     tabLength: 2
 ".plain.text":
-  editor:
-    softWrap: true
-".plain.gfm":
   editor:
     softWrap: true
 ".r.source":
