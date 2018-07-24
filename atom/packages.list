@@ -13,6 +13,7 @@ busy-signal@1.4.3
 change-case@0.6.5
 city-lights-syntax@1.1.8
 city-lights-ui@1.5.3
+compare-files@0.8.1
 dracula-syntax@2.0.7
 dracula-ui@0.6.0
 git-plus@8.0.0
@@ -49,9 +50,11 @@ seti-icons@1.5.4
 seti-syntax@1.1.3
 seti-ui@1.10.0
 simple-drag-drop-text@0.4.0
+svn@0.0.13
 tabs-to-spaces@1.0.5
 the-closer@0.7.0
 tidy-markdown@3.0.1
+typewriter@0.7.1
 unity-ui@2.1.11
 wordcount@3.0.0
 
