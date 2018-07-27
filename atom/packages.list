@@ -32,7 +32,7 @@ linter@2.2.0
 linter-ui-default@1.7.1
 markdown-preview-enhanced@0.15.6
 markdown-preview-plus@3.3.3
-markdown-writer@2.7.4
+markdown-writer@2.7.5
 minimal-syntax-dark@0.12.4
 minimap@4.29.8
 minimap-pigments@0.2.2
@@ -42,7 +42,7 @@ native-ui@0.26.2
 newbound-dark-syntax@1.1.0
 nucleus-dark-ui@0.12.3
 one-o-eight-syntax@0.38.0
-pen-paper-coffee-syntax@0.14.9
+pen-paper-coffee-syntax@0.14.15
 predawn-syntax@1.0.4
 predawn-ui@1.0.7
 pubster-syntax@3.0.2
