@@ -134,6 +134,7 @@ alias sshnci='ssh -Y mgk576@raijin.nci.org.au'
 alias sftpnci='sftp mgk576@raijin.nci.org.au'
 
 alias sshpi='ssh pi@192.168.0.15'
+alias sftppi='sftp pi@192.168.0.15'
 #
 ##color in man pages http://icanhaz.com/colors
 #
