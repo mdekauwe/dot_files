@@ -60,6 +60,7 @@
   "markdown-preview-plus":
     useGitHubStyle: true
   minimap:
+    absoluteMode: true
     disablePythonDocLinks: true
     plugins:
       pigments: true
