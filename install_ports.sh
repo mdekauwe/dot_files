@@ -41,7 +41,7 @@ sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-mpi4py
 sudo port install $PY_VER-sympy
-sudo port select --set pip pip36
+sudo port select --set py-sympy $PY_VER-symp
 sudo port install aspell
 sudo port install aspell-dict-en
 sudo port install R
