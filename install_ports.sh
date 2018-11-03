@@ -35,6 +35,8 @@ sudo port install $PY_VER-urllib3
 sudo port install $PY_VER-xarray
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
+sudo port -f activate $PY_VER-pip
+sudo port select --set pip pip36
 sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-mpi4py
