@@ -5,8 +5,8 @@ sudo port selfupdate
 
 sudo port install gcc6 +gfortran
 sudo port install mpich
-sudo port select --set gcc mp-gcc6
 sudo port install mpich-gcc6
+sudo port select --set gcc mp-gcc6
 sudo port install git
 sudo port install python36
 sudo port select --set python python36
@@ -17,6 +17,7 @@ sudo port install $PY_VER-scipy
 sudo port install $PY_VER-pandas
 sudo port install $PY_VER-matplotlib
 sudo port install $PY_VER-matplotlib-basemap
+sudo port install $PY_VER-cartopy
 sudo port install $PY_VER-beautifulsoup4
 sudo port install $PY_VER-jupyter
 sudo port install gdal
