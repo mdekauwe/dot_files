@@ -48,6 +48,8 @@ sudo port install R
 sudo port install gnuplot
 sudo port install netcdf
 sudo port install netcdf-fortran
+sudo port install netcdf-cxx4
+sudo port install netcdf-cxx
 sudo pip install netCDF4
 sudo pip install pygam
 sudo port install cdo
