@@ -53,6 +53,7 @@ sudo port install netcdf-cxx
 sudo pip install netCDF4
 sudo pip install pygam
 sudo port install cdo
+sudo port install coreutils
 #sudo port install nco
 #sudo port install ncview
 sudo port install gsl
