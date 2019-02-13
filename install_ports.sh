@@ -77,6 +77,6 @@ sudo port install gdbm
 sudo port install geos
 sudo port install ImageMagick
 sudo port install llvm-7.0
-sudo port install xorg
 sudo port install xorg-server
+sudo port install xorg
 sudo port install latexdiff
