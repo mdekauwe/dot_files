@@ -81,4 +81,3 @@ sudo port install xorg
 sudo port install xorg-server
 sudo port install latexdiff
 sudo port install gsed
-sudo port install coreutils
