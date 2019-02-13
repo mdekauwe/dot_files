@@ -26,7 +26,7 @@ sudo port install $PY_VER-ipython
 sudo port select --set ipython $PY_VER-ipython
 sudo port install $PY_VER-mpi4py
 sudo port install $PY_VER-pymc3
-sudo port instsall $PY_VER-scikit-learn
+sudo port install $PY_VER-scikit-learn
 sudo port install $PY_VER-seaborn
 sudo port install $PY_VER-sphinx
 sudo port select --set sphinx py36-sphinx
