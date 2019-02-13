@@ -20,7 +20,7 @@ PS1="\[\033[01;32m\]HAL 9000 \$\[\033[0m\] "
 
 
 # Setup path...
-PATH=/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+PATH=/opt/local/libexec/gnubin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PATH=$PATH:/bin:/usr/local/bin:/usr/bin:/Users/mdekauwe/bin
 export PATH=$PATH:/Users/mdekauwe/bin/bash:/Users/mdekauwe/bin/csh
 export PATH=$PATH:/Users/mdekauwe/bin/awk
@@ -29,6 +29,8 @@ export PATH=$PATH:/Users/mdekauwe/bin/perl
 export PATH=$PATH:/Users/mdekauwe/Library/Haskell/bin
 export PATH=$PATH:/Applications:/Applications/Utilities:
 export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
+export PATH=$PATH:/Users/mdekauwe/research/lpj_guess_runs/utils/guess_utilities_1.3/bin
+
 
 export MANPATH=/opt/local/share/man:$MANPATH
 
@@ -56,6 +58,8 @@ alias sphx='/opt/local/bin/sphinx-quickstart-2.6'
 alias ls='ls -FC'
 alias lv='rm *.pyc && ls' # remove python pyc files and ls
 alias duf='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
+alias ln='gln'
+alias readlink='greadlink'
 alias la='ls -A'
 alias lk='ls -lSr'
 alias lc='ls -lcr'
@@ -129,9 +133,12 @@ alias sshunsw2='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
 alias sshunsw3='ssh -Y z3497040@blizzard.ccrc.unsw.edu.au'
 alias sshunsw4='ssh -Y z3497040@maelstrom.ccrc.unsw.edu.au'
 
+alias sshmen='ssh -Y z5218916@monsoon.ccrc.unsw.edu.au'
+
 alias sftpunsw='sftp z3497040@monsoon.ccrc.unsw.edu.au'
 alias sshnci='ssh -Y mgk576@raijin.nci.org.au'
 alias sftpnci='sftp mgk576@raijin.nci.org.au'
+alias sftpmen='sftp z5218916@monsoon.ccrc.unsw.edu.au'
 
 alias sshpi='ssh pi@192.168.0.15'
 alias sftppi='sftp pi@192.168.0.15'
