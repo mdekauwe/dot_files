@@ -7,6 +7,7 @@ sudo port install gcc6 +gfortran
 sudo port install mpich
 sudo port install mpich-gcc6
 sudo port select --set gcc mp-gcc6
+#sudo port select --set gcc mp-gcc8
 sudo port install git
 sudo port install python36
 sudo port select --set python python36
