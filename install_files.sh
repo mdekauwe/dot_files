@@ -30,6 +30,13 @@ then
 fi
 cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
 
+FDIR="vim"
+if [ ! -d ".$FDIR" ]
+then
+    mkdir -p ~/.vimrc
+fi
+cp $FDIR/vimrc ~/.vimrc
+
 # http://gree2.github.io/python/2015/04/27/python-change-matplotlib-font-on-mac
 
 #$ python -c "import matplotlib; print(matplotlib.matplotlib_fname())"

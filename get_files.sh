@@ -21,3 +21,6 @@ apm list --installed --bare > $FDIR/packages.list
 
 FDIR="matplotlib"
 cp ~/.matplotlib/matplotlibrc $FDIR/matplotlibrc
+
+FDIR="vim"
+cp ~/.vimrc $FDIR/vimrc
