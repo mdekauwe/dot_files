@@ -105,7 +105,7 @@ alias dh='df -h'
 alias xv='xv -2xlimit'
 alias home='cd ~'
 alias openbugs='wine /Users/mdekauwe/.wine/drive_c/Program\ Files/OpenBUGS/OpenBUGS323/OpenBUGS.exe'
-alias vim='vi'
+alias vi='vim'
 #
 ## Maintainence taks...
 #
