@@ -16,3 +16,8 @@ set background=dark
 " use Source Code Pro
 set anti enc=utf-8
 set guifont=Source\ Code\ Pro\ 11
+
+
+" Searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
