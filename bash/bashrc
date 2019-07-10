@@ -14,7 +14,9 @@ ARCH=$(uname -m)
 #PS1="\[\033[1;35m\]HAL 9000$\[\033[0m\] "
 
 # set prompt
-export TERM="xterm-color"
+#export TERM="xterm-color"
+export TERM="xterm-256color"
+
 alias ls="ls -G"
 PS1="\[\033[01;32m\]HAL 9000 \$\[\033[0m\] "
 
