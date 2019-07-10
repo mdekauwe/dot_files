@@ -3,8 +3,9 @@ set tabstop=4          " number of visual spaces per TAB
 set softtabstop=4      " number of spaces in tab when editing
 set shiftwidth=4
 set number             " show line numbers
-set showmatch           " highlight matching [{()}]
+set showmatch          " highlight matching [{()}]
 set colorcolumn=81
+set smartindent        " Do smart autoindenting when starting a new line
 
 " set colours
 syntax on
