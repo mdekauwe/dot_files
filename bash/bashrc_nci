@@ -80,3 +80,4 @@ alias la='ls -A'
 alias m='less -X'i
 alias vi='vim'
 alias cls='clear'
+alias pwd='pwd -P' # show absolute path if in symbolic location
