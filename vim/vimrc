@@ -29,4 +29,11 @@ let fortran_free_source=1    "use free format Fortran
 let fortran_have_tabs=1      "allow for tabs
 let fortran_more_precise=1   "better syntax highlighting (but slower)
 let fortran_do_enddo=1
-autocmd FileType fortran setlocal ts=2 sw=2 expandtab
+
+augroup filetypes
+  autocmd!
+
+  autocmd BufRead,BufNewFile *.f,*.f96,*.f90,*.f66,*.f77 setlocal filetype=fortran
+  autocmd FileType fortran setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
+augroup end
