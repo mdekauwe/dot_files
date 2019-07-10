@@ -1,4 +1,49 @@
-set expandtab
-set tabstop=4
-set softtabstop=4
+set expandtab          " tabs are spaces
+set tabstop=4          " number of visual spaces per TAB
+set softtabstop=4      " number of spaces in tab when editing
 set shiftwidth=4
+set number             " show line numbers
+set showmatch          " highlight matching [{()}]
+set colorcolumn=81
+set smartindent        " Do smart autoindenting when starting a new line
+
+" set colours
+syntax on
+"colorscheme distinguished
+"colorscheme atom-dark
+colorscheme ariake-dark
+set background=dark
+
+" use Source Code Pro
+set anti enc=utf-8
+set guifont=Source\ Code\ Pro\ 11
+
+
+" Searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
+
+" Fortran90 setup
+let fortran_free_source=1    "use free format Fortran
+let fortran_have_tabs=1      "allow for tabs
+let fortran_more_precise=1   "better syntax highlighting (but slower)
+let fortran_do_enddo=1
+
+augroup filetypes
+  autocmd!
+
+  " Documentation
+  autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
+  autocmd FileType md setlocal wrap textwidth=80
+  autocmd FileType markdown setlocal wrap textwidth=80
+  autocmd FileType rst setlocal wrap textwidth=80
+
+  " LaTeX
+  autocmd FileType tex setlocal wrap textwidth=80
+
+  " Fortran
+  autocmd BufRead,BufNewFile *.f,*.f96,*.f90,*.f66,*.f77 setlocal filetype=fortran
+  autocmd FileType fortran setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
+augroup end

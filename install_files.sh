@@ -33,9 +33,19 @@ cp $FDIR/matplotlibrc ~/.matplotlib/matplotlibrc
 FDIR="vim"
 if [ ! -d ".$FDIR" ]
 then
-    mkdir -p ~/.vimrc
+    mkdir -p ~/.vim/colors
 fi
+cp $FDIR/colors/* ~/.vim/colors/.
 cp $FDIR/vimrc ~/.vimrc
+
+FDIR="fonts"
+if [ ! -d ".$FDIR" ]
+then
+    mkdir -p ~/.fonts
+fi
+fc-cache -f -v
+cp $FDIR/* ~/.fonts/.
+
 
 # http://gree2.github.io/python/2015/04/27/python-change-matplotlib-font-on-mac
 
