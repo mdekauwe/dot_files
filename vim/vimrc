@@ -33,6 +33,16 @@ let fortran_do_enddo=1
 augroup filetypes
   autocmd!
 
+  " Documentation
+  autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
+  autocmd FileType md setlocal wrap textwidth=80
+  autocmd FileType markdown setlocal wrap textwidth=80
+  autocmd FileType rst setlocal wrap textwidth=80
+
+  " LaTeX
+  autocmd FileType tex setlocal wrap textwidth=80
+
+  " Fortran
   autocmd BufRead,BufNewFile *.f,*.f96,*.f90,*.f66,*.f77 setlocal filetype=fortran
   autocmd FileType fortran setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
