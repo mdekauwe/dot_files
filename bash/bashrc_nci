@@ -52,16 +52,14 @@ module add intel-cc
 module add intel-fc
 module load intel-mpi
 module load netcdf/4.3.3.1
-#module load openmpi
 module load subversion/1.9.0
-#module load python/2.7.6
-#module load openmpi/1.6.3
-#module load netcdf/4.3.0
-#module load hdf5/1.8.7
 
 
 #export PYTHONPATH=$PYTHONPATH:/short/w35/mgk576/bin/:/short/w35/mgk576/local/lib/python2.7/site-packages/
 
+export PYTHONPATH=$PYTHONPATH:/g/data1/w35/mgk576/packages/anaconda3/envs/sci/lib/python3.7/site-packages
+
+export GEOS_LIBRARY_PATH=g/data1/w35/mgk576/packages/anaconda3/envs/sci/lib/libgeos
 
 # OLD
 #export PATH=/home/576/mgk576/research/anaconda3/bin:$PATH
@@ -73,7 +71,7 @@ export PATH=/g/data1/w35/mgk576/packages/anaconda3/bin:$PATH
 export PATH=$PATH:/g/data1/w35/mgk576/research/lpj_guess_runs/utils/guess_utilities_1.3/bin
 export PS1="\[\033[1;32m\]$\[\033[0m\] "
 
-source activate nci
+source activate sci
 
 alias ls='ls -FC'
 alias la='ls -A'
