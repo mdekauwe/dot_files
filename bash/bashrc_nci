@@ -72,6 +72,7 @@ export PS1="\[\033[1;32m\]$\[\033[0m\] "
 
 source activate sci
 
+alias d='display'
 alias ls='ls -FC'
 alias la='ls -A'
 alias m='less -X'i
