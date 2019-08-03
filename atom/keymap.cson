@@ -26,7 +26,7 @@
 
 
 'atom-workspace':
-  'cmd-g': 'go-to-line:toggle'
+  'cmd-h': 'go-to-line:toggle'
 
  'atom-workspace atom-text-editor:not([mini])':
   'cmd-enter': 'r-exec:send-command'

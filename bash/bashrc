@@ -138,6 +138,13 @@ alias sshunsw2='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
 alias sshunsw3='ssh -Y z3497040@blizzard.ccrc.unsw.edu.au'
 alias sshunsw4='ssh -Y z3497040@maelstrom.ccrc.unsw.edu.au'
 
+
+#Subversion 1.12.0 is now installed on Cyclone, Hurricane and Typhoon with the subversion/1.12.0 module file.
+#Can you confirm that this resolves your handshake issue?
+alias sshunsw5='ssh -Y z3497040@cyclone.ccrc.unsw.edu.au'
+alias sshunsw6='ssh -Y z3497040@hurricane.ccrc.unsw.edu.au'
+alias sshunsw7='ssh -Y z3497040@typhoon.ccrc.unsw.edu.au'
+
 alias sshmen='ssh -Y z5218916@monsoon.ccrc.unsw.edu.au'
 alias sshlin='ssh -Y z5227845@monsoon.ccrc.unsw.edu.au'
 alias sftplin='sftp z5227845@monsoon.ccrc.unsw.edu.au'

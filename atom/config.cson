@@ -43,7 +43,6 @@
   editor:
     autoIndentOnPaste: false
     fontFamily: "Fira Mono"
-    fontSize: 15
     invisibles: {}
     scrollPastEnd: true
     scrollSensitivity: 20
@@ -57,7 +56,6 @@
       _analyticsUserId: "17ec5e8d-0642-4d53-8ef4-cc6c319e810c"
   "linter-ui-default":
     panelHeight: 300
-    showPanel: true
   "markdown-preview-plus":
     useGitHubStyle: true
   minimap:
