@@ -3,17 +3,17 @@
 # Get port list port -qv installed > myports.txt
 sudo port selfupdate
 
-sudo port install gcc6 +gfortran
+sudo port install gcc9 +gfortran
 sudo port install mpich
-sudo port install mpich-gcc6
-sudo port select --set gcc mp-gcc6
+sudo port install mpich-gcc9
+sudo port select --set gcc mp-gcc9
 #sudo port select --set gcc mp-gcc8
 sudo port install git
-sudo port install python36
-sudo port select --set python python36
-PY_VER=py36
+sudo port install python37
+sudo port select --set python python37
+PY_VER=py37
 sudo port install $PY_VER-numpy
-sudo port select --set cython cython36
+sudo port select --set cython cython37
 sudo port install $PY_VER-scipy
 sudo port install $PY_VER-pandas
 sudo port install $PY_VER-matplotlib
@@ -30,14 +30,14 @@ sudo port install $PY_VER-pymc3
 sudo port install $PY_VER-scikit-learn
 sudo port install $PY_VER-seaborn
 sudo port install $PY_VER-sphinx
-sudo port select --set sphinx py36-sphinx
+sudo port select --set sphinx py37-sphinx
 sudo port install $PY_VER-statsmodels
 sudo port install $PY_VER-urllib3
 sudo port install $PY_VER-xarray
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
 sudo port -f activate $PY_VER-pip
-sudo port select --set pip pip36
+sudo port select --set pip pip37
 sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-mpi4py
@@ -48,7 +48,7 @@ sudo port install aspell-dict-en
 sudo port install R
 sudo port install gnuplot
 sudo port install netcdf
-sudo port install netcdf-fortran +gcc6
+sudo port install netcdf-fortran +gcc9
 sudo port install netcdf-cxx4
 sudo port install netcdf-cxx
 sudo pip install netCDF4
