@@ -53,8 +53,9 @@ sudo pip install netCDF4
 sudo pip install pygam
 sudo port install cdo
 sudo port install coreutils
-#sudo port install nco
-#sudo port install ncview
+sudo port install nco
+sudo port install wget
+sudo port install ncview
 sudo port install gsl
 sudo port install $PY_VER-gsl
 sudo port install texlive-basic
