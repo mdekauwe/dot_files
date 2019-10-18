@@ -39,7 +39,6 @@ sudo port -f activate $PY_VER-pip
 sudo port select --set pip pip37
 sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
-sudo port install $PY_VER-mpi4py
 sudo port install $PY_VER-sympy
 sudo port select --set py-sympy $PY_VER-symp
 sudo port install aspell
