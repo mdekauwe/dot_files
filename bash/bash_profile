@@ -8,3 +8,6 @@ alias gwgen="/Users/mdekauwe/gwgen-conda/bin/gwgen"
 
 # added by gwgen-conda installer
 export PATH="/Users/mdekauwe/gwgen-conda/bin:$PATH"
+
+# silence zsh message
+export BASH_SILENCE_DEPRECATION_WARNING=1
