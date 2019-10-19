@@ -33,6 +33,8 @@ export PATH=$PATH:/Applications:/Applications/Utilities:
 export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 export PATH=$PATH:/Users/mdekauwe/research/lpj_guess_runs/utils/guess_utilities_1.3/bin
 
+# issue with Apple removing gcc headers...
+export CPATH=`xcrun --show-sdk-path`/usr/include
 
 export MANPATH=/opt/local/share/man:$MANPATH
 
