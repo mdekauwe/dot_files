@@ -7,6 +7,7 @@ sudo port install gcc9 +gfortran
 sudo port install mpich
 sudo port install mpich-gcc9
 sudo port select --set gcc mp-gcc9
+sudo port install openmpi
 sudo port install git
 sudo port install python37
 sudo port select --set python python37
