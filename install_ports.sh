@@ -51,9 +51,11 @@ sudo port install netcdf-fortran +gcc9
 sudo port install netcdf-cxx4
 sudo port install netcdf-cxx
 sudo pip install netCDF4
+sudo port install $PY_VER-netCDF4
 sudo pip install pygam
 sudo port install cdo
 sudo port install coreutils
+
 sudo port install nco
 sudo port install wget
 sudo port install ncview
