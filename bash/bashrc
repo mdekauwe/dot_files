@@ -40,6 +40,7 @@ export MANPATH=/opt/local/share/man:$MANPATH
 
 export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/
 export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
+export PYTHONPATH=$PYTHONPATH:/Library/Python/3.7/site-packages
 #export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/
 
 
@@ -88,7 +89,7 @@ alias jupyter="jupyter-3.6"
 alias jn="jupyter notebook"
 alias s='subl'
 alias sn='subl --new-window'
-alias d='open -a /Applications/Preview.app'
+alias d='open -a /System/Applications/Preview.app'
 alias gp='gnuplot'
 alias rm='\rm'
 alias man='man -F'
