@@ -153,8 +153,8 @@ alias sshlin='ssh -Y z5227845@monsoon.ccrc.unsw.edu.au'
 alias sftplin='sftp z5227845@monsoon.ccrc.unsw.edu.au'
 
 alias sftpunsw='sftp z3497040@monsoon.ccrc.unsw.edu.au'
-alias sshnci='ssh -Y mgk576@raijin.nci.org.au'
-alias sftpnci='sftp mgk576@raijin.nci.org.au'
+alias sshnci='ssh -Y mgk576@gadi.nci.org.au'
+alias sftpnci='sftp mgk576@gadi.nci.org.au'
 alias sftpmen='sftp z5218916@monsoon.ccrc.unsw.edu.au'
 
 alias sshpi='ssh pi@192.168.0.15'
