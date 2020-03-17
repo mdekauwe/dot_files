@@ -13,3 +13,7 @@ Contains scripts to:
 ./generate_ssh_key.sh.sh
 ./git_run.sh
 ```
+
+## Fonts...
+
+On the latest mac, the Helvetica ttf fonts need to be copied to /Library/Python/3.7/site-packages/matplotlib/mpl-data/fonts/ttf
