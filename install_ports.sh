@@ -47,12 +47,13 @@ sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-sympy
 sudo port select --set py-sympy $PY_VER-symp
+sudo port select --set py-sympy py37-sympy
 sudo port install aspell
 sudo port install aspell-dict-en
-sudo port install R
-sudo port install gnuplot
 sudo pip install netCDF4
 sudo port install $PY_VER-netCDF4
+sudo port install R
+sudo port install gnuplot
 sudo pip install pygam
 sudo port install cdo
 sudo port install coreutils
