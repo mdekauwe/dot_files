@@ -2,20 +2,30 @@
 
 # Get port list port -qv installed > myports.txt
 sudo port selfupdate
-
-sudo port install gcc9 +gfortran
+GCC_VER=gcc10
+sudo port install $GCC_VER +gfortran
+sudo port select --set gcc mp-$GCC_VER
 sudo port install mpich
-sudo port install mpich-gcc9
-sudo port select --set gcc mp-gcc9
+sudo port select --set mpi mpich-mp-fortran
+sudo port install mpich-$GCC_VER
+sudo port select --set mpi mpich-gcc10-fortran
+sudo port install netcdf
+sudo port install netcdf-fortran +$GCC_VER
+sudo port install netcdf-cxx4
+sudo port install netcdf-cxx
 sudo port install openmpi
+sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
 sudo port install python37
 sudo port select --set python python37
 PY_VER=py37
 sudo port install $PY_VER-numpy
 sudo port select --set cython cython37
+sudo port install $PY_VER-ipython
+sudo port select --set ipython $PY_VER-ipython
 sudo port install $PY_VER-scipy
 sudo port install $PY_VER-pandas
+sudo port install $PY_VER-xarray
 sudo port install $PY_VER-matplotlib
 sudo port install $PY_VER-matplotlib-basemap
 sudo port install $PY_VER-cartopy
@@ -23,17 +33,12 @@ sudo port install $PY_VER-beautifulsoup4
 sudo port install $PY_VER-jupyter
 sudo port install gdal
 sudo port install $PY_VER-gdal
-sudo port install $PY_VER-ipython
-sudo port select --set ipython $PY_VER-ipython
 sudo port install $PY_VER-mpi4py
 sudo port install $PY_VER-pymc3
 sudo port install $PY_VER-scikit-learn
 sudo port install $PY_VER-seaborn
-sudo port install $PY_VER-sphinx
-sudo port select --set sphinx py37-sphinx
 sudo port install $PY_VER-statsmodels
 sudo port install $PY_VER-urllib3
-sudo port install $PY_VER-xarray
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
 sudo port -f activate $PY_VER-pip
@@ -46,10 +51,6 @@ sudo port install aspell
 sudo port install aspell-dict-en
 sudo port install R
 sudo port install gnuplot
-sudo port install netcdf
-sudo port install netcdf-fortran +gcc9
-sudo port install netcdf-cxx4
-sudo port install netcdf-cxx
 sudo pip install netCDF4
 sudo port install $PY_VER-netCDF4
 sudo pip install pygam
