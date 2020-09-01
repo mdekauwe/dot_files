@@ -50,7 +50,7 @@ sudo port select --set py-sympy $PY_VER-symp
 sudo port select --set py-sympy py37-sympy
 sudo port install aspell
 sudo port install aspell-dict-en
-sudo pip install netCDF4
+#sudo pip install netCDF4
 sudo port install $PY_VER-netCDF4
 sudo port install R
 sudo port install gnuplot
