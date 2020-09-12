@@ -22,7 +22,7 @@ PS1="\[\033[01;32m\]HAL 9000 \$\[\033[0m\] "
 
 
 # Setup path...
-PATH=/opt/local/libexec/gnubin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+PATH=/opt/local/libexec/gnubin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PATH=$PATH:/bin:/usr/local/bin:/usr/bin:/Users/mdekauwe/bin
 export PATH=$PATH:/Users/mdekauwe/bin/bash:/Users/mdekauwe/bin/csh
 export PATH=$PATH:/Users/mdekauwe/bin/awk
@@ -38,9 +38,12 @@ export CPATH=`xcrun --show-sdk-path`/usr/include
 
 export MANPATH=/opt/local/share/man:$MANPATH
 
-export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/
-export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
-export PYTHONPATH=$PYTHONPATH:/Library/Python/3.7/site-packages
+export PYTHONPATH=/opt/local/lib/python/site-packages
+export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/
+
+#export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/
+#export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
+#export PYTHONPATH=$PYTHONPATH:/Library/Python/3.8/site-packages
 #export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/
 
 
@@ -85,7 +88,7 @@ alias rstudio='open -a Rstudio .'
 #alias tn='subl --new-window'
 alias t='atom'
 alias tn='atom --new-window'
-alias j="jupyter-notebook-3.6"
+alias j="jupyter-notebook-3.7"
 alias jupyter="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin/jupyter"
 alias jn="jupyter notebook"
 alias s='subl'
