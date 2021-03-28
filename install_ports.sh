@@ -16,11 +16,11 @@ sudo port install netcdf-cxx
 sudo port install openmpi
 sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
-sudo port install python37
-sudo port select --set python python37
-PY_VER=py37
+sudo port install python38
+sudo port select --set python python38
+PY_VER=py38
 sudo port install $PY_VER-numpy
-sudo port select --set cython cython37
+sudo port select --set cython cython38
 sudo port install $PY_VER-ipython
 sudo port select --set ipython $PY_VER-ipython
 sudo port install $PY_VER-scipy
@@ -42,12 +42,12 @@ sudo port install $PY_VER-urllib3
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
 sudo port -f activate $PY_VER-pip
-sudo port select --set pip pip37
+sudo port select --set pip pip38
 sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-sympy
 sudo port select --set py-sympy $PY_VER-symp
-sudo port select --set py-sympy py37-sympy
+sudo port select --set py-sympy py38-sympy
 sudo port install aspell
 sudo port install aspell-dict-en
 #sudo pip install netCDF4
