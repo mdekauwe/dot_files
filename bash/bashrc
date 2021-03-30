@@ -32,8 +32,14 @@ export PATH=$PATH:/Users/mdekauwe/Library/Haskell/bin
 export PATH=$PATH:/Applications:/Applications/Utilities:
 export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 export PATH=$PATH:/Users/mdekauwe/research/lpj_guess_runs/utils/guess_utilities_1.3/bin
+
+# JULE Stuff
 export PATH=$HOME/.local/cylc/bin:$PATH
 export PATH=$HOME/.local/rose/bin:$PATH
+export PATH=$HOME/.local/fcm/bin:$PATH
+# forking issue with rose-jules
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 
 export MANPATH=/opt/local/share/man:$MANPATH
 
@@ -42,8 +48,7 @@ export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/li
 
 export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
 
-# forking issue with rose-jules
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 
 TEXMFHOME="/Users/mdekauwe/texmf"
 export TEXINPUTS=$TEXINPUTS:/Users/mdekauwe/latex_packages/prosper
