@@ -165,6 +165,12 @@ alias sftpmen='sftp z5218916@monsoon.ccrc.unsw.edu.au'
 
 alias sshpi='ssh pi@192.168.0.15'
 alias sftppi='sftp pi@192.168.0.15'
+
+alias sshjas1='ssh -A mdekauwe@login1.jasmin.ac.uk'
+alias sshjas2='ssh -A mdekauwe@login2.jasmin.ac.uk'
+alias sshjas3='ssh -A mdekauwe@login3.jasmin.ac.uk'
+alias sshjas4='ssh -A mdekauwe@login4.jasmin.ac.uk'
+
 #
 ##color in man pages http://icanhaz.com/colors
 #
