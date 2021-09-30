@@ -176,7 +176,7 @@ alias sshjas2='ssh -A -X mdekauwe@login2.jasmin.ac.uk'
 alias sshjas3='ssh -A -X mdekauwe@login3.jasmin.ac.uk'
 alias sshjas4='ssh -A -X mdekauwe@login4.jasmin.ac.uk'
 
-# Brisvegas
+# Bristol: Blue Crystal 4.
 alias sshbris='ssh -X xj21307@bc4login.acrc.bris.ac.uk'
 
 
