@@ -22,7 +22,7 @@ PS1="\[\033[01;32m\]HAL 9000 \$\[\033[0m\] "
 
 
 # Setup path...
-PATH=/opt/local/libexec/gnubin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+PATH=/opt/local/libexec/gnubin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PATH=$PATH:/bin:/usr/local/bin:/usr/bin:/Users/mdekauwe/bin
 export PATH=$PATH:/Users/mdekauwe/bin/bash:/Users/mdekauwe/bin/csh
 export PATH=$PATH:/Users/mdekauwe/bin/awk
@@ -31,23 +31,27 @@ export PATH=$PATH:/Users/mdekauwe/bin/perl
 export PATH=$PATH:/Users/mdekauwe/Library/Haskell/bin
 export PATH=$PATH:/Applications:/Applications/Utilities:
 export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
-export PATH=$PATH:/Users/mdekauwe/research/lpj_guess_runs/utils/guess_utilities_1.3/bin
+export PATH=$PATH:/Users/mdekauwe/research/lpj_guess/utils/guess_utilities_1.3/bin
+export PATH=$PATH:/Users/mdekauwe/.local/cylc/bin
+export PATH=$PATH:/Users/mdekauwe/.local/rose/bin
+export PATH=$PATH:/Users/mdekauwe/.local/fcm/bin
 
-# JULE Stuff
-export PATH=$HOME/.local/cylc/bin:$PATH
-export PATH=$HOME/.local/rose/bin:$PATH
-export PATH=$HOME/.local/fcm/bin:$PATH
-# forking issue with rose-jules
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
+# issue with Apple removing gcc headers...
+export CPATH=`xcrun --show-sdk-path`/usr/include
 
 export MANPATH=/opt/local/share/man:$MANPATH
 
-#export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/
-export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/
+export PYTHONPATH=/opt/local/lib/python/site-packages
+export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/
 
-export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
+#export PYTHONPATH=/opt/local/lib/python/site-packages
+#export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/
 
+
+#export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/
+#export PYTHONPATH=$PYTHONPATH:/Users/mdekauwe/bin/python
+#export PYTHONPATH=$PYTHONPATH:/Library/Python/3.8/site-packages
+#export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/
 
 
 TEXMFHOME="/Users/mdekauwe/texmf"
@@ -85,18 +89,18 @@ alias m='less -X'
 alias n='nedit'
 alias tw='edit'
 alias twn='edit --new-window'
-alias rstudio='open -a rstudio'
+alias rstudio='open -a Rstudio .'
+
 #alias t='subl'
 #alias tn='subl --new-window'
 alias t='atom'
 alias tn='atom --new-window'
-alias j="jupyter-notebook-3.6"
-alias jupyter="jupyter-3.6"
+alias j="jupyter-notebook-3.7"
+alias jupyter="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin/jupyter"
 alias jn="jupyter notebook"
 alias s='subl'
 alias sn='subl --new-window'
-#alias d='open -a /Applications/Preview.app'
-alias d='open -a preview'
+alias d='open -a /System/Applications/Preview.app'
 alias gp='gnuplot'
 alias rm='\rm'
 alias man='man -F'
@@ -118,6 +122,7 @@ alias xv='xv -2xlimit'
 alias home='cd ~'
 alias openbugs='wine /Users/mdekauwe/.wine/drive_c/Program\ Files/OpenBUGS/OpenBUGS323/OpenBUGS.exe'
 alias vi='vim'
+alias pwd='pwd -P' # show absolute path if in symbolic location
 #
 ## Maintainence taks...
 #
@@ -142,23 +147,23 @@ alias calc='open -a calculator'
 ## for ssh to linux machines
 #
 # UNSW storm servers
-alias sshunsw1='ssh -Y z3497040@hurricane.ccrc.unsw.edu.au'
-alias sshunsw2='ssh -Y z3497040@cyclone.ccrc.unsw.edu.au'
-alias sshunsw3='ssh -Y z3497040@typhoon.ccrc.unsw.edu.au'
+alias sshunsw1='ssh -Y z3497040@squall.ccrc.unsw.edu.au'
+alias sshunsw2='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
+alias sshunsw3='ssh -Y z3497040@blizzard.ccrc.unsw.edu.au'
+alias sshunsw4='ssh -Y z3497040@maelstrom.ccrc.unsw.edu.au'
 
-# Only the above three have the necessary SVN lib to handshake with CABLE repo
-alias sshunsw4='ssh -Y z3497040@squall.ccrc.unsw.edu.au'
-alias sshunsw5='ssh -Y z3497040@monsoon.ccrc.unsw.edu.au'
-alias sshunsw6='ssh -Y z3497040@blizzard.ccrc.unsw.edu.au'
-alias sshunsw7='ssh -Y z3497040@maelstrom.ccrc.unsw.edu.au'
+
+#Subversion 1.12.0 is now installed on Cyclone, Hurricane and Typhoon with the subversion/1.12.0 module file.
+#Can you confirm that this resolves your handshake issue?
+alias sshunsw5='ssh -Y z3497040@cyclone.ccrc.unsw.edu.au'
+alias sshunsw6='ssh -Y z3497040@hurricane.ccrc.unsw.edu.au'
+alias sshunsw7='ssh -Y z3497040@typhoon.ccrc.unsw.edu.au'
 
 alias sshmen='ssh -Y z5218916@monsoon.ccrc.unsw.edu.au'
 alias sshlin='ssh -Y z5227845@monsoon.ccrc.unsw.edu.au'
 alias sftplin='sftp z5227845@monsoon.ccrc.unsw.edu.au'
 
 alias sftpunsw='sftp z3497040@monsoon.ccrc.unsw.edu.au'
-#alias sshnci='ssh -Y mgk576@raijin.nci.org.au'
-#alias sftpnci='sftp mgk576@raijin.nci.org.au'
 alias sshnci='ssh -Y mgk576@gadi.nci.org.au'
 alias sftpnci='sftp mgk576@gadi.nci.org.au'
 alias sftpmen='sftp z5218916@monsoon.ccrc.unsw.edu.au'
@@ -170,6 +175,10 @@ alias sshjas1='ssh -A -X mdekauwe@login1.jasmin.ac.uk'
 alias sshjas2='ssh -A -X mdekauwe@login2.jasmin.ac.uk'
 alias sshjas3='ssh -A -X mdekauwe@login3.jasmin.ac.uk'
 alias sshjas4='ssh -A -X mdekauwe@login4.jasmin.ac.uk'
+
+# Brisvegas
+alias sshbris='ssh -X xj21307@bc4login.acrc.bris.ac.uk'
+
 
 #
 ##color in man pages http://icanhaz.com/colors
