@@ -24,8 +24,6 @@ module load tools/panoply/4.9.1
 module load libs/netcdf/4.7.3
 module load libs/netcdf/4.4.1.1.MPI
 module load languages/anaconda3/3.6.5
-#module load iimpi/2017.01-GCC-5.4.0-2.26
-#module load ifort/2017.1.132-GCC-5.4.0-2.26
 module load intel/2017.01 # Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL
 
 
