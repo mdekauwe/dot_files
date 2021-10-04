@@ -27,6 +27,7 @@ module load iimpi/2017.01-GCC-5.4.0-2.26
 module load ifort/2017.1.132-GCC-5.4.0-2.26
 module load intel/2017.01 # Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL
 
+conda init bash
 conda activate sci
 
 alias d='display'
