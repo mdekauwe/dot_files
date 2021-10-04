@@ -178,7 +178,7 @@ alias sshjas4='ssh -A -X mdekauwe@login4.jasmin.ac.uk'
 
 # Bristol: Blue Crystal 4.
 alias sshbris='ssh -X xj21307@bc4login.acrc.bris.ac.uk'
-
+alias sftpbris='sftp xj21307@bc4login.acrc.bris.ac.uk'
 
 #
 ##color in man pages http://icanhaz.com/colors
