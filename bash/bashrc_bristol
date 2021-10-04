@@ -27,8 +27,6 @@ module load iimpi/2017.01-GCC-5.4.0-2.26
 module load ifort/2017.1.132-GCC-5.4.0-2.26
 module load intel/2017.01 # Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL
 
-conda init bash
-conda activate sci
 
 alias d='display'
 alias ls='ls -FC'
@@ -38,8 +36,6 @@ alias vi='vim'
 alias cls='clear'
 alias pwd='pwd -P' # show absolute path if in symbolic location
 
-
-export PATH=/mnt/storage/home/xj21307/.conda/envs/sci/bin:/mnt/storage/software/languages/anaconda/Anaconda3-2018.12-3.6.5.0/condabin:/mnt/storage/apps/intel/compilers_and_libraries_2017.1.132/linux/bin/intel64:/mnt/storage/apps/intel/compilers_and_libraries_2017.1.132/linux/bin:/mnt/storage/apps/intel/bin:/mnt/storage/easybuild/software/binutils/2.26-GCCcore-5.4.0/bin:/mnt/storage/easybuild/software/GCCcore/5.4.0/bin:/mnt/storage/software/languages/anaconda/Anaconda3-2018.12-3.6.5.0/bin:/mnt/storage/software/languages/java/jdk1.8.0_141/bin:/mnt/storage/easybuild/software/netCDF/4.3.3.1-foss-2016a/bin:/mnt/storage/easybuild/software/cURL/7.47.0-foss-2016a/bin:/mnt/storage/easybuild/software/HDF5/1.8.16-foss-2016a/bin:/mnt/storage/easybuild/software/FFTW/3.3.4-gompi-2016a/bin:/mnt/storage/easybuild/software/OpenBLAS/0.2.15-GCC-4.9.3-2.25-LAPACK-3.6.0/bin:/mnt/storage/easybuild/software/OpenMPI/1.10.2-GCC-4.9.3-2.25/bin:/mnt/storage/easybuild/software/hwloc/1.11.2-GCC-4.9.3-2.25/sbin:/mnt/storage/easybuild/software/hwloc/1.11.2-GCC-4.9.3-2.25/bin:/mnt/storage/easybuild/software/numactl/2.0.11-GCC-4.9.3-2.25/bin:/mnt/storage/software/tools/nco-4.7.4/bin:/mnt/storage/software/libraries/intel/netcdf-4.4.1.1-mpi/bin:/mnt/storage/software/tools/PanoplyJ-4.9.1/bin:/mnt/storage/software/tools/subversion-1.9.0/bin:/mnt/storage/software/languages/anaconda/Anaconda2-4.4.0/bin:/mnt/storage/software/languages/gcc-7.2.0/bin:/mnt/storage/software/libraries/intel/hdf5-1.10.1-mpi/bin:/mnt/storage/apps/intel/mkl/bin64:/mnt/storage/apps/intel/vtune_amplifier_xe/bin64:/mnt/storage/apps/intel/bin64:/mnt/storage/apps/intel/impi/2017.1.132/bin64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/mnt/storage/home/xj21307/.dotnet/tools:/usr/lpp/mmfs/bin:/opt/ddn/ime/bin:/mnt/storage/home/xj21307/.local/bin:/mnt/storage/home/xj21307/bin:$PATH
 
 export PS1="\[\033[1;32m\]$\[\033[0m\] "
 
@@ -58,3 +54,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+#conda init bash
+conda activate sci
