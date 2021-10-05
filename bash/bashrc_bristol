@@ -23,6 +23,7 @@ module purge
 #module load tools/subversion/1.9
 #module load tools/panoply/4.9.1
 module load libs/netcdf/4.7.3
+module load languages/intel/2020-u4
 #module load libs/netcdf/4.4.1.1.MPI
 #module load languages/anaconda3/3.6.5
 module load languages/anaconda3
