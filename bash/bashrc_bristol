@@ -18,17 +18,18 @@ export TERM="xterm-256color"
 module use /mnt/storage/easybuild/modules/local
 
 module purge
+
+module load tools/subversion/1.9
+module load libs/netcdf/4.7.3
+module load languages/intel/2018-u3
+module load languages/anaconda3
+
+#module load languages/intel/2020-u4
+#module load languages/anaconda3/3.6.5
 #module load tools/nco/4.7.2
 #module load tools/ncview/2.1.7
-module load tools/subversion/1.9
-#module load tools/panoply/4.9.1
-module load libs/netcdf/4.7.3
-module load languages/intel/2020-u4
 #module load libs/netcdf/4.4.1.1.MPI
-#module load languages/anaconda3/3.6.5
-module load languages/anaconda3
-#module load intel/2017.01 # Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL
-
+#module load tools/panoply/4.9.1
 
 alias d='display'
 alias ls='ls -FC'
