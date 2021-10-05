@@ -21,7 +21,7 @@ module use /mnt/storage/easybuild/modules/local
 module purge
 
 module load tools/subversion/1.9
-module load libs/netcdf/4.7.3
+module load libs/netcdf/4.7.0 # ifort compatible
 module load languages/intel/2020-u4
 module load languages/anaconda3
 
