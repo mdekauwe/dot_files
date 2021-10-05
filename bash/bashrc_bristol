@@ -22,9 +22,12 @@ module purge
 
 module load tools/subversion/1.9
 module load libs/netcdf/4.7.3
-module load languages/intel/2018-u3
+
+# Need this to compile with netcdf lib, but it also break git, so you need to unload to run git
+#module load languages/intel/2017.01
 module load languages/anaconda3
 
+#module load languages/intel/2018-u3
 #module load languages/intel/2020-u4
 #module load languages/anaconda3/3.6.5
 #module load tools/nco/4.7.2
