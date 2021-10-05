@@ -13,6 +13,7 @@ fi
 # Add locally built modules
 # -callum
 
+
 export TERM="xterm-256color"
 
 module use /mnt/storage/easybuild/modules/local
