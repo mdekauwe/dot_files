@@ -16,16 +16,18 @@ fi
 
 export TERM="xterm-256color"
 
-module use /mnt/storage/easybuild/modules/local
+#module use /mnt/storage/easybuild/modules/local
 
 module purge
 
 module load tools/subversion/1.9
-module load libs/netcdf/4.7.0 # ifort compatible
-module load languages/intel/2020-u4
 module load languages/anaconda3
 
-# Need this to compile with netcdf lib, but it also break git, so you need to unload to run git
+# Load interactively as these are producing "feedback" (printing to screen)
+# that means sftp isn't working
+#module load libs/netcdf/4.7.0 # ifort compatible
+#module load languages/intel/2020-u4
+
 
 
 alias d='display'
