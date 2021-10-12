@@ -35,7 +35,7 @@ alias m='less -X'i
 alias vi='vim'
 alias cls='clear'
 alias pwd='pwd -P' # show absolute path if in symbolic location
-
+alisas quota="mmlsquota --block-size auto"
 
 export PS1="\[\033[1;32m\]$\[\033[0m\] "
 
