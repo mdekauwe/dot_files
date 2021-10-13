@@ -13,6 +13,7 @@ fi
 # Add locally built modules
 # -callum
 
+export PATH=$PATH:/mnt/storage/home/xj21307/.local/fcm/bin
 
 export TERM="xterm-256color"
 
