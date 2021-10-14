@@ -2,7 +2,11 @@
 
 # Get port list port -qv installed > myports.txt
 sudo port selfupdate
-GCC_VER=gcc10
+
+# bug for JULES at the moment
+#GCC_VER=gcc10
+
+GCC_VER=gcc8
 sudo port install $GCC_VER +gfortran
 sudo port select --set gcc mp-$GCC_VER
 sudo port install mpich
