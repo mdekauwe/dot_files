@@ -181,7 +181,8 @@ alias sshbris='ssh -X xj21307@bc4login.acrc.bris.ac.uk'
 alias sftpbris='sftp xj21307@bc4login.acrc.bris.ac.uk'
 
 # Moonsoon met office
-alias sshmo='ssh -X mdekauwe@lander.monsoon-metoffice.co.uk'
+alias sshmon='ssh -X mdekauwe@lander.monsoon-metoffice.co.uk'
+alias sftpmon='sftp mdekauwe@lander.monsoon-metoffice.co.uk'
 
 #
 ##color in man pages http://icanhaz.com/colors
