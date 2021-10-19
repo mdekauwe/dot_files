@@ -88,3 +88,4 @@ sudo port install llvm-7.0
 sudo port install xorg-server
 sudo port install xorg
 sudo port install latexdiff
+sudo port install cabal 
