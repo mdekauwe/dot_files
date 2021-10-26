@@ -178,6 +178,8 @@ alias sshjas2='ssh -A -X mdekauwe@login2.jasmin.ac.uk'
 alias sshjas3='ssh -A -X mdekauwe@login3.jasmin.ac.uk'
 alias sshjas4='ssh -A -X mdekauwe@login4.jasmin.ac.uk'
 
+alias sshcylc='ssh -AX mdekauwe@cylc1.jasmin.ac.uk'
+
 # Bristol: Blue Crystal 4.
 alias sshbris='ssh -X xj21307@bc4login.acrc.bris.ac.uk'
 alias sftpbris='sftp xj21307@bc4login.acrc.bris.ac.uk'
