@@ -171,6 +171,8 @@ alias sftpmen='sftp z5218916@monsoon.ccrc.unsw.edu.au'
 alias sshpi='ssh pi@192.168.0.15'
 alias sftppi='sftp pi@192.168.0.15'
 
+
+
 alias sshjas1='ssh -A -X mdekauwe@login1.jasmin.ac.uk'
 alias sshjas2='ssh -A -X mdekauwe@login2.jasmin.ac.uk'
 alias sshjas3='ssh -A -X mdekauwe@login3.jasmin.ac.uk'
@@ -303,3 +305,9 @@ LIGHTPURPLE='\e[1;35m'
 YELLOW='\e[1;33m'
 WHITE='\e[1;37m'
 NC='\e[0m'              # No Color
+
+
+function jasmin_setup() {
+  eval $(ssh-agent -s)
+  ssh-add ~/.ssh/id_rsa_jasmin
+}
