@@ -4,9 +4,9 @@
 sudo port selfupdate
 
 # bug for JULES at the moment
-#GCC_VER=gcc10
+GCC_VER=gcc10
 
-GCC_VER=gcc8
+#GCC_VER=gcc8
 sudo port install $GCC_VER +gfortran
 sudo port select --set gcc mp-$GCC_VER
 sudo port install mpich
@@ -15,8 +15,10 @@ sudo port install mpich-$GCC_VER
 sudo port select --set mpi mpich-gcc10-fortran
 sudo port install netcdf
 sudo port install netcdf-fortran +$GCC_VER
-sudo port install netcdf-cxx4
-sudo port install netcdf-cxx
+#sudo port install netcdf-cxx4
+#sudo port install netcdf-cxx
+sudo port install netcdf-cxx4 +$GCC_VER
+sudo port install netcdf-cxx +$GCC_VER
 sudo port install openmpi
 sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
