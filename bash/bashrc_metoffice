@@ -1,10 +1,6 @@
 # Provide access to FCM, Rose and Cylc
 PATH=$PATH:~fcm/bin
 
-# Ensure .bashrc is sourced in login shells
-# (only add this if it is not already done in your .bash_profile)
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-
 
 alias m='less -X'
 alias sshmon='ssh -X xcslc0'
