@@ -3,8 +3,13 @@
 # Get port list port -qv installed > myports.txt
 sudo port selfupdate
 
+#Install this first as there is some weird conflict issue with gcc stuff
+#I think this at least fixes it
+sudo port install libgcc-devel
 # bug for JULES at the moment
-GCC_VER=gcc10
+#GCC_VER=gcc10
+
+GCC_VER=gcc11
 
 #GCC_VER=gcc8
 sudo port install $GCC_VER +gfortran
