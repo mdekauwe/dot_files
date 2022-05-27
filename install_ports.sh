@@ -11,13 +11,12 @@ sudo port install libgcc-devel
 
 GCC_VER=gcc11
 
-#GCC_VER=gcc8
 sudo port install $GCC_VER +gfortran
 sudo port select --set gcc mp-$GCC_VER
 sudo port install mpich
 sudo port select --set mpi mpich-mp-fortran
 sudo port install mpich-$GCC_VER
-sudo port select --set mpi mpich-gcc10-fortran
+sudo port select --set mpi mpich-gcc11-fortran
 sudo port install netcdf
 sudo port install netcdf-fortran +$GCC_VER
 #sudo port install netcdf-cxx4
@@ -58,7 +57,6 @@ sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-sympy
 sudo port select --set py-sympy $PY_VER-symp
-sudo port select --set py-sympy py38-sympy
 sudo port install aspell
 sudo port install aspell-dict-en
 #sudo pip install netCDF4
@@ -81,6 +79,7 @@ sudo port install texlive-math-science
 sudo port install texlive-publishers
 sudo port install texlive-xetex
 sudo port install latexmk
+sudo port install latexdiff
 sudo port install fondu
 sudo port install bash-completion
 sudo port install bzip2
@@ -94,5 +93,4 @@ sudo port install ImageMagick
 sudo port install llvm-7.0
 sudo port install xorg-server
 sudo port install xorg
-sudo port install latexdiff
 sudo port install cabal
