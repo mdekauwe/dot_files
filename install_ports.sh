@@ -26,11 +26,11 @@ sudo port install netcdf-cxx +$GCC_VER
 sudo port install openmpi
 sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
-sudo port install python38
-sudo port select --set python python38
-PY_VER=py38
+sudo port install python39
+sudo port select --set python python39
+PY_VER=py39
 sudo port install $PY_VER-numpy
-sudo port select --set cython cython38
+sudo port select --set cython cython39
 sudo port install $PY_VER-ipython
 sudo port select --set ipython $PY_VER-ipython
 sudo port install $PY_VER-scipy
@@ -52,7 +52,7 @@ sudo port install $PY_VER-urllib3
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
 sudo port -f activate $PY_VER-pip
-sudo port select --set pip pip38
+sudo port select --set pip pip39
 sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-sympy
@@ -94,3 +94,9 @@ sudo port install llvm-7.0
 sudo port install xorg-server
 sudo port install xorg
 sudo port install cabal
+sudo port install subversion
+sudo port install ruby24
+sudo port select --set ruby ruby24
+sudo gem install bundler
+sudo gem install jekyll
+sudo pip install openpyxl
