@@ -95,8 +95,9 @@ sudo port install xorg-server
 sudo port install xorg
 sudo port install cabal
 sudo port install subversion
-sudo port install ruby24
-sudo port select --set ruby ruby24
+sudo port install ruby26
+sudo port select --set ruby ruby26
 sudo gem install bundler
 sudo gem install jekyll
 sudo pip install openpyxl
+sudo port install gh # github thing to save credentials
