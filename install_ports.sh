@@ -101,3 +101,4 @@ sudo gem install bundler
 sudo gem install jekyll
 sudo pip install openpyxl
 sudo port install gh # github thing to save credentials
+sudo pip install earthengine-api
