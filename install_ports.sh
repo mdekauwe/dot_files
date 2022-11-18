@@ -9,7 +9,7 @@ sudo port install libgcc-devel
 # bug for JULES at the moment
 #GCC_VER=gcc10
 
-GCC_VER=gcc11
+GCC_VER=gcc12
 
 sudo port install $GCC_VER +gfortran
 sudo port select --set gcc mp-$GCC_VER
@@ -26,11 +26,11 @@ sudo port install netcdf-cxx +$GCC_VER
 sudo port install openmpi
 sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
-sudo port install python39
-sudo port select --set python python39
-PY_VER=py39
+sudo port install python310
+sudo port select --set python python310
+PY_VER=py310
 sudo port install $PY_VER-numpy
-sudo port select --set cython cython39
+sudo port select --set cython cython310
 sudo port install $PY_VER-ipython
 sudo port select --set ipython $PY_VER-ipython
 sudo port install $PY_VER-scipy
@@ -52,7 +52,7 @@ sudo port install $PY_VER-urllib3
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
 sudo port -f activate $PY_VER-pip
-sudo port select --set pip pip39
+sudo port select --set pip pip310
 sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-sympy
@@ -103,3 +103,5 @@ sudo pip install openpyxl
 sudo port install gh # github thing to save credentials
 sudo pip install earthengine-api
 sudo pip install pingouin
+sudo pip install metomi-rose
+sudo pip install cylc-flow cylc-rose

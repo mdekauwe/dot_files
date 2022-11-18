@@ -1,12 +1,12 @@
 
 # Print a fortune cookie for interactive shells:
-if [[ $- = *i* ]]
-then
-    echo
-    /opt/local/bin/fortune
-    echo
-    #echo -ne "Hello $USER today is "; date
-fi
+#if [[ $- = *i* ]]
+#then
+#    echo
+#    /opt/local/bin/fortune
+#    echo
+#    #echo -ne "Hello $USER today is "; date
+#fi
 
 ARCH=$(uname -m)
 
@@ -22,19 +22,23 @@ PS1="\[\033[01;32m\]HAL 9000 \$\[\033[0m\] "
 
 
 # Setup path...
-PATH=/opt/local/libexec/gnubin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-export PATH=$PATH:/bin:/usr/local/bin:/usr/bin:/Users/mdekauwe/bin
-export PATH=$PATH:/Users/mdekauwe/bin/bash:/Users/mdekauwe/bin/csh
-export PATH=$PATH:/Users/mdekauwe/bin/awk
-export PATH=$PATH:/Users/mdekauwe/bin/python:.:/Users/mdekauwe/bin/x86_64
-export PATH=$PATH:/Users/mdekauwe/bin/perl
-export PATH=$PATH:/Users/mdekauwe/Library/Haskell/bin
+PATH=/opt/homebrew/opt/ruby@2.7/bin:/opt/local/libexec/gnubin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=$PATH:/bin:/usr/local/bin:/usr/bin:/Users/xj21307/bin
+export PATH=$PATH:/Users/xj21307/bin/bash:/Users/xj21307/bin/csh
+export PATH=$PATH:/Users/xj21307/bin/awk
+export PATH=$PATH:/Users/xj21307/bin/python:.:/Users/xj21307/bin/x86_64
+export PATH=$PATH:/Users/xj21307/bin/perl
+export PATH=$PATH:/Users/xj21307/Library/Haskell/bin
 export PATH=$PATH:/Applications:/Applications/Utilities:
 export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
-export PATH=$PATH:/Users/mdekauwe/research/lpj_guess/utils/guess_utilities_1.3/bin
-export PATH=$PATH:/Users/mdekauwe/.local/cylc/bin
-export PATH=$PATH:/Users/mdekauwe/.local/rose/bin
-export PATH=$PATH:/Users/mdekauwe/.local/fcm/bin
+export PATH=$PATH:/Users/xj21307/research/lpj_guess/utils/guess_utilities_1.3/bin
+export PATH=$PATH:/Users/xj21307/.local/cylc/bin
+export PATH=$PATH:/Users/xj21307/.local/rose/bin
+export PATH=$PATH:/Users/xj21307/.local/fcm/bin
+export PATH=$PATH:/Users/xj21307/.gem/ruby/2.7.0/bin
+
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/local/lib:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib"
 
 # issue with Apple removing gcc headers...
 export CPATH=`xcrun --show-sdk-path`/usr/include
@@ -42,7 +46,12 @@ export CPATH=`xcrun --show-sdk-path`/usr/include
 export MANPATH=/opt/local/share/man:$MANPATH
 
 export PYTHONPATH=/opt/local/lib/python/site-packages
-export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/
+#export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/
+
+export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/
+
+# Starting on macOS Catalina (10.15) the headers used for Ruby have been moved from their previous location which results in some gems, including Jekyll to fail installation. This can be solved by setting SDKROOT in your shell configuration to the value provided by xcrun.
+export SDKROOT=$(xcrun --show-sdk-path)
 
 #export PYTHONPATH=/opt/local/lib/python/site-packages
 #export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/
@@ -54,8 +63,8 @@ export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Ver
 #export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/
 
 
-TEXMFHOME="/Users/mdekauwe/texmf"
-export TEXINPUTS=$TEXINPUTS:/Users/mdekauwe/latex_packages/prosper
+TEXMFHOME="/Users/xj21307/texmf"
+export TEXINPUTS=$TEXINPUTS:/Users/xj21307/latex_packages/prosper
 
 export SVN_EDITOR='atom --new-window'
 
@@ -120,7 +129,7 @@ alias dh='df -h'
 #alias aspell='aspell --mode=tex -c'
 alias xv='xv -2xlimit'
 alias home='cd ~'
-alias openbugs='wine /Users/mdekauwe/.wine/drive_c/Program\ Files/OpenBUGS/OpenBUGS323/OpenBUGS.exe'
+alias openbugs='wine /Users/xj21307/.wine/drive_c/Program\ Files/OpenBUGS/OpenBUGS323/OpenBUGS.exe'
 alias vi='vim'
 alias pwd='pwd -P' # show absolute path if in symbolic location
 #
@@ -178,7 +187,9 @@ alias sshjas2='ssh -A -X mdekauwe@login2.jasmin.ac.uk'
 alias sshjas3='ssh -A -X mdekauwe@login3.jasmin.ac.uk'
 alias sshjas4='ssh -A -X mdekauwe@login4.jasmin.ac.uk'
 
-alias sshcylc='ssh -AX mdekauwe@cylc1.jasmin.ac.uk'
+alias sshcylc='ssh -A -X mdekauwe@cylc1.jasmin.ac.uk'
+alias sftpcylc='sftp mdekauwe@cylc1.jasmin.ac.uk'
+
 
 # Bristol: Blue Crystal 4.
 alias sshbris='ssh -X xj21307@bc4login.acrc.bris.ac.uk'
