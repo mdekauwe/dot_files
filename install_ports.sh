@@ -14,7 +14,6 @@ GCC_VER=gcc12
 sudo port install $GCC_VER +gfortran
 sudo port select --set gcc mp-$GCC_VER
 sudo port install mpich
-sudo port select --set mpi mpich-mp-fortran
 sudo port install mpich-$GCC_VER
 sudo port select --set mpi mpich-gcc12-fortran
 sudo port install netcdf
@@ -29,7 +28,7 @@ sudo port install git
 
 PY_VER=py310
 VER=310
-sudo port install python310
+sudo port install python$VER
 sudo port select --set python python$VER
 sudo port install $PY_VER-numpy
 sudo port select --set cython cython$VER
