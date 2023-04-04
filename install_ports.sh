@@ -16,7 +16,7 @@ sudo port select --set gcc mp-$GCC_VER
 sudo port install mpich
 sudo port select --set mpi mpich-mp-fortran
 sudo port install mpich-$GCC_VER
-sudo port select --set mpi mpich-gcc11-fortran
+sudo port select --set mpi mpich-gcc12-fortran
 sudo port install netcdf
 sudo port install netcdf-fortran +$GCC_VER
 #sudo port install netcdf-cxx4
@@ -26,11 +26,13 @@ sudo port install netcdf-cxx +$GCC_VER
 sudo port install openmpi
 sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
-sudo port install python310
-sudo port select --set python python310
+
 PY_VER=py310
+VER=310
+sudo port install python310
+sudo port select --set python python$VER
 sudo port install $PY_VER-numpy
-sudo port select --set cython cython310
+sudo port select --set cython cython$VER
 sudo port install $PY_VER-ipython
 sudo port select --set ipython $PY_VER-ipython
 sudo port install $PY_VER-scipy
@@ -44,7 +46,8 @@ sudo port install $PY_VER-jupyter
 sudo port install gdal
 sudo port install $PY_VER-gdal
 sudo port install $PY_VER-mpi4py
-sudo port install $PY_VER-pymc3
+#sudo port install $PY_VER-pymc3
+sudo port install $PY_VER-pymc
 sudo port install $PY_VER-scikit-learn
 sudo port install $PY_VER-seaborn
 sudo port install $PY_VER-statsmodels
@@ -52,11 +55,11 @@ sudo port install $PY_VER-urllib3
 sudo port install $PY_VER-xlrd
 sudo port install $PY_VER-pip
 sudo port -f activate $PY_VER-pip
-sudo port select --set pip pip310
+sudo port select --set pip pip$VER
 sudo port install $PY_VER-lmfit
 sudo port install $PY_VER-tabulate
 sudo port install $PY_VER-sympy
-sudo port select --set py-sympy $PY_VER-symp
+SUDO port select --set py-sympy $PY_VER-sympy
 sudo port install aspell
 sudo port install aspell-dict-en
 #sudo pip install netCDF4
