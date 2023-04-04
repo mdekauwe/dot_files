@@ -38,14 +38,11 @@ sudo port install $PY_VER-scipy
 sudo port install $PY_VER-pandas
 sudo port install $PY_VER-xarray
 sudo port install $PY_VER-matplotlib
-sudo port install $PY_VER-matplotlib-basemap
 sudo port install $PY_VER-cartopy
-sudo port install $PY_VER-beautifulsoup4
 sudo port install $PY_VER-jupyter
 sudo port install gdal
 sudo port install $PY_VER-gdal
 sudo port install $PY_VER-mpi4py
-#sudo port install $PY_VER-pymc3
 sudo port install $PY_VER-pymc
 sudo port install $PY_VER-scikit-learn
 sudo port install $PY_VER-seaborn
