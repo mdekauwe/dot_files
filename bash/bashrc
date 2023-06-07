@@ -132,6 +132,8 @@ alias home='cd ~'
 alias openbugs='wine /Users/xj21307/.wine/drive_c/Program\ Files/OpenBUGS/OpenBUGS323/OpenBUGS.exe'
 alias vi='vim'
 alias pwd='pwd -P' # show absolute path if in symbolic location
+alias zed="open -a /Applications/Zed.app -n"
+
 #
 ## Maintainence taks...
 #
