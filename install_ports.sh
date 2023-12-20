@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# sudo su
+
 # Get port list port -qv installed > myports.txt
 sudo port selfupdate
 
@@ -9,7 +11,7 @@ sudo port install libgcc-devel
 # bug for JULES at the moment
 #GCC_VER=gcc10
 
-GCC_VER=gcc12
+GCC_VER=gcc13
 
 sudo port install $GCC_VER +gfortran
 sudo port select --set gcc mp-$GCC_VER
@@ -26,8 +28,8 @@ sudo port install openmpi
 sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
 
-PY_VER=py310
-VER=310
+PY_VER=py311
+VER=311
 sudo port install python$VER
 sudo port select --set python python$VER
 sudo port install $PY_VER-numpy
