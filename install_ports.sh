@@ -6,8 +6,8 @@
 sudo port selfupdate
 
 #Install this first as there is some weird conflict issue with gcc stuff
-#I think this at least fixes it
-sudo port install libgcc-devel
+#I think this at least fixes it - not working with latest OS
+#sudo port install libgcc-devel
 # bug for JULES at the moment
 #GCC_VER=gcc10
 
