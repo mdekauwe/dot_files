@@ -14,6 +14,13 @@ Contains scripts to:
 ./git_run.sh
 ```
 
+## to stop all the sudo password for macports (NB. this doesn't stop all the Y/N questions
+
+```terminal
+sudo su
+install_ports.sh
+```
+
 ## Fonts...
 
 On the latest mac, the Helvetica ttf fonts need to be copied to /Library/Python/3.7/site-packages/matplotlib/mpl-data/fonts/ttf
