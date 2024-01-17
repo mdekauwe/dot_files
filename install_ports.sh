@@ -96,8 +96,10 @@ sudo port install xorg-server
 sudo port install xorg
 sudo port install cabal
 sudo port install subversion
-sudo port install ruby26
-sudo port select --set ruby ruby26
+#sudo port install ruby26
+#sudo port select --set ruby ruby26
+sudo port install ruby30
+sudo port select --set ruby ruby30
 sudo gem install bundler
 sudo gem install jekyll
 sudo pip install openpyxl
