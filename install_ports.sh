@@ -28,7 +28,7 @@ sudo port install openmpi
 sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
 
-PY_VER=py311
+PY_VER=py313
 VER=311
 sudo port install python$VER
 sudo port select --set python python$VER
