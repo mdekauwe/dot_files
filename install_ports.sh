@@ -29,7 +29,7 @@ sudo port select --set mpi openmpi-mp-fortran
 sudo port install git
 
 PY_VER=py313
-VER=311
+VER=313
 sudo port install python$VER
 sudo port select --set python python$VER
 sudo port install $PY_VER-numpy
@@ -105,6 +105,7 @@ sudo gem install jekyll
 sudo pip install openpyxl
 sudo port install gh # github thing to save credentials
 sudo pip install earthengine-api
+sudo pip install geemap
 sudo pip install pingouin
 sudo pip install metomi-rose
 sudo pip install cylc-flow cylc-rose
