@@ -183,11 +183,10 @@ alias sshpi='ssh pi@192.168.0.15'
 alias sftppi='sftp pi@192.168.0.15'
 
 
-
-alias sshjas1='ssh -A -X mdekauwe@login1.jasmin.ac.uk'
-alias sshjas2='ssh -A -X mdekauwe@login2.jasmin.ac.uk'
-alias sshjas3='ssh -A -X mdekauwe@login3.jasmin.ac.uk'
-alias sshjas4='ssh -A -X mdekauwe@login4.jasmin.ac.uk'
+alias sshjas1='ssh -A -X mdekauwe@login-01.jasmin.ac.uk'
+alias sshjas2='ssh -A -X mdekauwe@login-02.jasmin.ac.uk'
+alias sshjas3='ssh -A -X mdekauwe@login-03.jasmin.ac.uk'
+alias sshjas4='ssh -A -X mdekauwe@login-04.jasmin.ac.uk'
 
 alias sshcylc='ssh -A -X mdekauwe@cylc1.jasmin.ac.uk'
 alias sftpcylc='sftp mdekauwe@cylc1.jasmin.ac.uk'
