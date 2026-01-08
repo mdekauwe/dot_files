@@ -1,112 +1,137 @@
 #!/bin/bash
 
-# sudo su
+set -euo pipefail
 
-# Get port list port -qv installed > myports.txt
-sudo port selfupdate
+# Ask for sudo once
+sudo -v
 
-#Install this first as there is some weird conflict issue with gcc stuff
-#I think this at least fixes it - not working with latest OS
-#sudo port install libgcc-devel
-# bug for JULES at the moment
-#GCC_VER=gcc10
+# Keep sudo alive while the script runs
+while true; do sudo -n true; sleep 60; done 2>/dev/null &
 
-GCC_VER=gcc13
+# MacPorts command
+PORT="sudo port"
 
-sudo port install $GCC_VER +gfortran
+# Update ports tree
+$PORT selfupdate
+
+# -------------------------------
+# GCC for Fortran only
+# -------------------------------
+GCC_VER=gcc15
+$PORT install $GCC_VER +gfortran
 sudo port select --set gcc mp-$GCC_VER
-sudo port install mpich
-sudo port install mpich-$GCC_VER
-sudo port select --set mpi mpich-gcc12-fortran
-sudo port install netcdf
-sudo port install netcdf-fortran +$GCC_VER
-#sudo port install netcdf-cxx4
-#sudo port install netcdf-cxx
-sudo port install netcdf-cxx4 +$GCC_VER
-sudo port install netcdf-cxx +$GCC_VER
-sudo port install openmpi
-sudo port select --set mpi openmpi-mp-fortran
-sudo port install git
 
+# -------------------------------
+# OpenMPI for MPI support
+# -------------------------------
+$PORT install openmpi +fortran
+$PORT select --set mpi openmpi-mp-fortran
+
+# -------------------------------
+# NetCDF libraries
+# -------------------------------
+# NetCDF C and Fortran (use GCC for Fortran only)
+$PORT install netcdf
+$PORT install netcdf-fortran +$GCC_VER
+
+# NetCDF C++ (use Apple Clang)
+$PORT install netcdf-cxx4
+$PORT install netcdf-cxx
+
+# -------------------------------
+# Python and scientific stack
+# -------------------------------
 PY_VER=py313
 VER=313
-sudo port install python$VER
-sudo port select --set python python$VER
-sudo port install $PY_VER-numpy
-sudo port select --set cython cython$VER
-sudo port install $PY_VER-ipython
-sudo port select --set ipython $PY_VER-ipython
-sudo port install $PY_VER-scipy
-sudo port install $PY_VER-pandas
-sudo port install $PY_VER-xarray
-sudo port install $PY_VER-matplotlib
-sudo port install $PY_VER-cartopy
-sudo port install $PY_VER-jupyter
-sudo port install gdal
-sudo port install $PY_VER-gdal
-sudo port install $PY_VER-mpi4py
-sudo port install $PY_VER-pymc
-sudo port install $PY_VER-scikit-learn
-sudo port install $PY_VER-seaborn
-sudo port install $PY_VER-statsmodels
-sudo port install $PY_VER-urllib3
-sudo port install $PY_VER-xlrd
-sudo port install $PY_VER-pip
-sudo port -f activate $PY_VER-pip
-sudo port select --set pip pip$VER
-sudo port install $PY_VER-lmfit
-sudo port install $PY_VER-tabulate
-sudo port install $PY_VER-sympy
-SUDO port select --set py-sympy $PY_VER-sympy
-sudo port install aspell
-sudo port install aspell-dict-en
-#sudo pip install netCDF4
-sudo port install $PY_VER-netCDF4
-sudo port install R
-sudo port install gnuplot
-sudo pip install pygam
-sudo port install cdo
-sudo port install coreutils
-sudo port install nco
-sudo port install wget
-sudo port install ncview
-sudo port install gsl
-sudo port install $PY_VER-gsl
-sudo port install texlive-basic
-sudo port install texlive-bibtex-extra
-sudo port install texlive-fonts-extra
-sudo port install texlive-latex-recommended
-sudo port install texlive-math-science
-sudo port install texlive-publishers
-sudo port install texlive-xetex
-sudo port install latexmk
-sudo port install latexdiff
-sudo port install fondu
-sudo port install bash-completion
-sudo port install bzip2
-sudo port install dos2unix
-sudo port install fortune
-sudo port install gawk
-sudo port install gdm
-sudo port install gdbm
-sudo port install geos
-sudo port install ImageMagick
-sudo port install llvm-7.0
-sudo port install xorg-server
-sudo port install xorg
-sudo port install cabal
-sudo port install subversion
-#sudo port install ruby26
-#sudo port select --set ruby ruby26
-sudo port install ruby30
-sudo port select --set ruby ruby30
-sudo gem install bundler
-sudo gem install jekyll
-sudo pip install openpyxl
-sudo port install gh # github thing to save credentials
-sudo pip install earthengine-api
-sudo pip install xee
-sudo pip install geemap
-sudo pip install pingouin
-sudo pip install metomi-rose
-sudo pip install cylc-flow cylc-rose
+
+$PORT install python$VER
+$PORT select --set python python$VER
+
+# Scientific Python packages
+$PORT install $PY_VER-numpy
+$PORT install $PY_VER-cython
+$PORT install $PY_VER-ipython
+$PORT select --set ipython $PY_VER-ipython
+$PORT install $PY_VER-scipy
+$PORT install $PY_VER-pandas
+$PORT install $PY_VER-xarray
+$PORT install $PY_VER-matplotlib
+$PORT install $PY_VER-cartopy
+$PORT install $PY_VER-jupyter
+$PORT install $PY_VER-gdal
+$PORT install $PY_VER-pymc
+$PORT install $PY_VER-scikit-learn
+$PORT install $PY_VER-seaborn
+$PORT install $PY_VER-statsmodels
+$PORT install $PY_VER-urllib3
+$PORT install $PY_VER-xlrd
+$PORT install $PY_VER-pip
+$PORT -f activate $PY_VER-pip
+$PORT select --set pip pip$VER
+$PORT install $PY_VER-lmfit
+$PORT install $PY_VER-tabulate
+$PORT install $PY_VER-sympy
+$PORT select --set py-sympy $PY_VER-sympy
+
+# Python MPI (use OpenMPI, NOT MPICH)
+$PORT install $PY_VER-mpi4py +openmpi
+
+# Other Python packages via pip
+sudo pip install pygam openpyxl earthengine-api xee geemap pingouin \
+                 metomi-rose cylc-flow cylc-rose
+
+# -------------------------------
+# Other scientific and system tools
+# -------------------------------
+$PORT install aspell aspell-dict-en
+$PORT install hdf5 +fortran
+
+# some issue related to C++20
+#$PORT install R gnuplot cdo +
+
+#conda create -n geo cdo netcdf4 hdf5 -c conda-forge
+#conda activate geo
+#sudo pip install cdo  # Python wrapper
+
+$PORT install R
+$PORT install gnuplot
+$PORT install coreutils
+$PORT install nco
+$PORT install wget
+$PORT install ncview
+#$PORT install gsl
+#$PY_VER-gsl
+
+
+$PORT install texlive-basic
+$PORT install texlive-bibtex-extra
+$PORT install texlive-fonts-extra
+$PORT install texlive-latex-recommended
+$PORT install texlive-math-science
+$PORT install texlive-publishers
+$PORT install texlive-xetex
+$PORT install latexmk
+$PORT install latexdiff
+$PORT install fondu
+$PORT install bash-completion
+$PORT install bzip2
+$PORT install dos2unix
+$PORT install fortune
+$PORT install gawk
+#$PORT install gdm
+$PORT install gdbm
+$PORT install geos
+$PORT install ImageMagick
+$PORT install xorg-server
+$PORT install xorg
+$PORT install cabal
+$PORT install subversion
+$PORT install ruby30
+$PORT select --set ruby ruby30
+sudo gem install bundler jekyll
+$PORT install gh
+
+# -------------------------------
+# End of script
+# -------------------------------
+echo "All MacPorts installations complete!"
