@@ -107,6 +107,7 @@ $PORT install texlive-basic
 $PORT install texlive-bibtex-extra
 $PORT install texlive-fonts-extra
 $PORT install texlive-latex-recommended
+$PORT install texlive-lang-greek
 $PORT install texlive-math-science
 $PORT install texlive-publishers
 $PORT install texlive-xetex
