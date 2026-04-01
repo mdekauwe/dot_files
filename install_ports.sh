@@ -19,7 +19,11 @@ $PORT selfupdate
 # -------------------------------
 GCC_VER=gcc15
 $PORT install $GCC_VER +gfortran
-sudo port select --set gcc mp-$GCC_VER
+$PORT select --set gcc mp-$GCC_VER
+
+$PORT install clang-20
+$PORT install boost181
+#sudo port install boost181 configure.compiler=macports-clang-20
 
 # -------------------------------
 # OpenMPI for MPI support
@@ -46,6 +50,8 @@ VER=313
 
 $PORT install python$VER
 $PORT select --set python python$VER
+
+
 
 # Scientific Python packages
 $PORT install $PY_VER-numpy
