@@ -12,3 +12,10 @@ if [ -f '/Users/mdekauwe/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mdekauwe/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/mdekauwe/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# Python virtualenv for pip-only packages (created by install_ports.sh).
+# Keep this LAST: it must come after the MacPorts PATH lines above, or
+# python/pip resolve to MacPorts and pip installs into /opt/local again.
+if [ -f "$HOME/.venvs/sci/bin/activate" ]; then
+    source "$HOME/.venvs/sci/bin/activate"
+fi

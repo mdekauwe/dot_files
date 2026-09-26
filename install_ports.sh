@@ -1,146 +1,123 @@
 #!/bin/bash
-
-#I think if we change $PORT -N install it would remove the yes/no; test
+#
+# Install MacPorts packages for scientific work.
+# Safe to re-run: `port install` skips anything already installed.
 
 set -euo pipefail
 
-# Ask for sudo once
+# -------------------------------
+# Versions
+# -------------------------------
+GCC_VER=gcc15
+PY_VER=py313
+VER=313
+RUBY_VER=ruby33
+
+# Pip-only Python packages go in a venv, NOT MacPorts' site-packages.
+# `sudo pip install` into /opt/local overwrites port-owned files (e.g. an
+# old scipy got layered over py313-scipy and broke scipy.spatial).
+VENV="$HOME/.venvs/sci"
+
+PORT="sudo port -N"   # -N: non-interactive
+
+# Stale C++ headers from old Command Line Tools break C++ source builds
+# ("fatal error: 'string' file not found"). See:
+# https://trac.macports.org/wiki/ProblemHotlist#clts16
+if [ -d /Library/Developer/CommandLineTools/usr/include/c++ ]; then
+    echo "Old C++ headers found; remove them first with:"
+    echo "  sudo rm -rf /Library/Developer/CommandLineTools/usr/include/c++"
+    exit 1
+fi
+
+# Ask for sudo once and keep it alive; kill the keep-alive on exit
 sudo -v
-
-# Keep sudo alive while the script runs
 while true; do sudo -n true; sleep 60; done 2>/dev/null &
+SUDO_PID=$!
+trap 'kill $SUDO_PID 2>/dev/null' EXIT
 
-# MacPorts command
-PORT="sudo port"
-
-# Update ports tree
 $PORT selfupdate
 
 # -------------------------------
-# GCC for Fortran only
+# Compilers, MPI, NetCDF
 # -------------------------------
-GCC_VER=gcc15
-$PORT -N install $GCC_VER +gfortran
+# GCC for Fortran only
+$PORT install $GCC_VER
 $PORT select --set gcc mp-$GCC_VER
 
-$PORT -N install clang-20
-$PORT -N install boost181
-#sudo port install boost181 configure.compiler=macports-clang-20
+# MacPorts clang and boost
+$PORT install clang-20 boost181
+#$PORT install boost181 configure.compiler=macports-clang-20
 
-# -------------------------------
-# OpenMPI for MPI support
-# -------------------------------
-$PORT -N install openmpi +fortran
+# OpenMPI (NOT MPICH); Fortran bindings come from openmpi-default +gcc15
+$PORT install openmpi
 $PORT select --set mpi openmpi-mp-fortran
 
-# -------------------------------
-# NetCDF libraries
-# -------------------------------
-# NetCDF C and Fortran (use GCC for Fortran only)
-$PORT -N install netcdf
-$PORT -N install netcdf-fortran +$GCC_VER
-
-# NetCDF C++ (use Apple Clang)
-$PORT -N install netcdf-cxx4
-$PORT -N install netcdf-cxx
+# NetCDF C/Fortran (GCC for Fortran), C++ (Apple Clang)
+$PORT install hdf5 +fortran netcdf netcdf-fortran +$GCC_VER
+$PORT install netcdf-cxx4 netcdf-cxx
 
 # -------------------------------
 # Python and scientific stack
 # -------------------------------
-PY_VER=py313
-VER=313
-
-$PORT -N install python$VER
+$PORT install python$VER
 $PORT select --set python python$VER
+$PORT select --set python3 python$VER
 
+PY_PORTS=(
+    numpy scipy cython ipython pandas xarray matplotlib cartopy jupyter
+    gdal pymc scikit-learn seaborn statsmodels urllib3 xlrd openpyxl pip
+    lmfit tabulate sympy netcdf4
+)
+$PORT install "${PY_PORTS[@]/#/$PY_VER-}"
+$PORT install $PY_VER-mpi4py +openmpi
 
-
-# Scientific Python packages
-$PORT -N install $PY_VER-numpy
-$PORT -N install $PY_VER-scipy
-$PORT -N install $PY_VER-cython
-$PORT -N install $PY_VER-ipython
 $PORT select --set ipython $PY_VER-ipython
-$PORT -N install $PY_VER-pandas
-$PORT -N install $PY_VER-xarray
-$PORT -N install $PY_VER-matplotlib
-$PORT -N install $PY_VER-cartopy
-$PORT -N install $PY_VER-jupyter
-$PORT -N install $PY_VER-gdal
-$PORT -N install $PY_VER-pymc
-$PORT -N install $PY_VER-scikit-learn
-$PORT -N install $PY_VER-seaborn
-$PORT -N install $PY_VER-statsmodels
-$PORT -N install $PY_VER-urllib3
-$PORT -N install $PY_VER-xlrd
-$PORT -N install $PY_VER-pip
-$PORT -f activate $PY_VER-pip
+$PORT select --set ipython3 $PY_VER-ipython
 $PORT select --set pip pip$VER
-$PORT -N install $PY_VER-lmfit
-$PORT -N install $PY_VER-tabulate
-$PORT -N install $PY_VER-sympy
 $PORT select --set py-sympy $PY_VER-sympy
 
-# Python MPI (use OpenMPI, NOT MPICH)
-$PORT -N install $PY_VER-mpi4py +openmpi
-
-# Other Python packages via pip
-sudo pip install pygam openpyxl earthengine-api xee geemap pingouin \
-                 metomi-rose cylc-flow cylc-rose
+# Pip-only packages (no MacPorts port) go in a virtualenv.
+#
+# Why: MacPorts owns every file in its site-packages. `sudo pip install`
+# writes into that same folder, and when a pip package pulls in a
+# dependency (e.g. pygam -> scipy) pip overwrites MacPorts' copy with its
+# own. MacPorts doesn't know, so the next `port upgrade` leaves a mix of
+# old and new files -- that's what broke scipy.spatial and pyarrow.
+#
+# A virtualenv is just a folder ($VENV) with its own python/pip. Anything
+# pip installs lands there, so MacPorts files are never touched and the
+# whole thing can be deleted and rebuilt (rm -rf $VENV; re-run this
+# section). --system-site-packages lets it still import the MacPorts
+# numpy/scipy/pandas etc., so nothing is installed twice.
+#
+# ~/.bash_profile activates it in every new shell, so `python`, `pip`,
+# `cylc`, `rose` all come from the venv. Manual use:
+#   source ~/.venvs/sci/bin/activate    # turn on
+#   deactivate                          # turn off
+/opt/local/bin/python3.${VER#3} -m venv --system-site-packages "$VENV"
+"$VENV/bin/pip" install --upgrade pip
+"$VENV/bin/pip" install pygam pingouin earthengine-api xee geemap \
+                        metomi-rose cylc-flow cylc-rose
 
 # -------------------------------
 # Other scientific and system tools
 # -------------------------------
-$PORT -N install aspell aspell-dict-en
-$PORT -N install hdf5 +fortran
+# cdo: C++20 build issue, use conda if needed:
+#   conda create -n geo cdo netcdf4 hdf5 -c conda-forge
+$PORT install R gnuplot nco ncview geos
 
-# some issue related to C++20
-#$PORT -N install R gnuplot cdo +
+$PORT install \
+    texlive-basic texlive-bibtex-extra texlive-fonts-extra \
+    texlive-latex-recommended texlive-lang-greek texlive-math-science \
+    texlive-publishers texlive-xetex latexmk latexdiff fondu \
+    aspell aspell-dict-en
 
-#conda create -n geo cdo netcdf4 hdf5 -c conda-forge
-#conda activate geo
-#sudo pip install cdo  # Python wrapper
+$PORT install \
+    coreutils wget bash-completion bzip2 dos2unix fortune gawk gdbm \
+    ImageMagick xorg-server xorg cabal subversion gh
 
-$PORT -N install R
-$PORT -N install gnuplot
-$PORT -N install coreutils
-$PORT -N install nco
-$PORT -N install wget
-$PORT -N install ncview
-#$PORT -N install gsl
-#$PY_VER-gsl
+$PORT install $RUBY_VER
+$PORT select --set ruby $RUBY_VER
+sudo /opt/local/bin/gem3.${RUBY_VER#ruby3} install bundler jekyll
 
-
-$PORT -N install texlive-basic
-$PORT -N install texlive-bibtex-extra
-$PORT -N install texlive-fonts-extra
-$PORT -N install texlive-latex-recommended
-$PORT -N install texlive-lang-greek
-$PORT -N install texlive-math-science
-$PORT -N install texlive-publishers
-$PORT -N install texlive-xetex
-$PORT -N install latexmk
-$PORT -N install latexdiff
-$PORT -N install fondu
-$PORT -N install bash-completion
-$PORT -N install bzip2
-$PORT -N install dos2unix
-$PORT -N install fortune
-$PORT -N install gawk
-#$PORT -N install gdm
-$PORT -N install gdbm
-$PORT -N install geos
-$PORT -N install ImageMagick
-$PORT -N install xorg-server
-$PORT -N install xorg
-$PORT -N install cabal
-$PORT -N install subversion
-$PORT -N install ruby30
-$PORT select --set ruby ruby30
-sudo gem install bundler jekyll
-$PORT -N install gh
-
-# -------------------------------
-# End of script
-# -------------------------------
 echo "All MacPorts installations complete!"
