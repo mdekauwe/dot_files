@@ -17,5 +17,7 @@ if [ -f '/Users/mdekauwe/Downloads/google-cloud-sdk/completion.bash.inc' ]; then
 # Keep this LAST: it must come after the MacPorts PATH lines above, or
 # python/pip resolve to MacPorts and pip installs into /opt/local again.
 if [ -f "$HOME/.venvs/sci/bin/activate" ]; then
+    # Don't prepend "(sci)" to PS1 -- keep the HAL 9000 prompt intact.
+    export VIRTUAL_ENV_DISABLE_PROMPT=1
     source "$HOME/.venvs/sci/bin/activate"
 fi
