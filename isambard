@@ -1,0 +1,21 @@
+#!/bin/bash
+# Log in to Isambard 3 (project b36ae), renewing the clifton certificate
+# only when it has expired.
+#   isambard              interactive login
+#   isambard <command>    run a command there, e.g. isambard squeue --me
+KEY=~/.ssh/id_ed25519_isambard
+HOST=b36ae.3.isambard
+CERT=~/Library/Caches/clifton/$HOST-cert.pub
+
+# load the key into the agent once (passphrase from the macOS keychain)
+ssh-add -l 2>/dev/null | grep -q "$(ssh-keygen -lf $KEY.pub | awk '{print $2}')" ||
+    ssh-add --apple-use-keychain $KEY
+
+# renew the certificate if missing or expiring in the next 10 minutes
+valid_to=$(ssh-keygen -L -f "$CERT" 2>/dev/null | awk '/Valid:/ {print $NF}')
+if [ -z "$valid_to" ] ||
+   [ "$(/bin/date -j -f %Y-%m-%dT%H:%M:%S "$valid_to" +%s 2>/dev/null || echo 0)" -lt $(( $(/bin/date +%s) + 600 )) ]; then
+    clifton auth --identity $KEY || exit 1
+fi
+
+exec ssh "$HOST" "$@"
