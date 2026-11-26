@@ -102,8 +102,13 @@ alias rstudio='open -a Rstudio .'
 
 #alias t='subl'
 #alias tn='subl --new-window'
-alias t='atom'
-alias tn='atom --new-window'
+#alias t='atom'
+#alias tn='atom --new-window'
+alias t='zed'
+alias tn='zed -n'
+alias z='zed'
+alias zn='zed -n'
+
 alias j="jupyter-notebook-3.7"
 alias jupyter="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin/jupyter"
 alias jn="jupyter notebook"
